@@ -83,8 +83,9 @@ namespace QLSieuThi.View
                 if (control.KhachHang_Them(kh))
                 {
                     this.Close();
-                    this.frmMain.Visible = true;
                     this.frmMain.frmMain_Update();
+                    this.frmMain.Visible = true;
+                    
                 }
             }
         }

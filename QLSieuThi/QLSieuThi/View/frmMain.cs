@@ -198,7 +198,13 @@ namespace QLSieuThi
         }
         private void btnKhach_Xoa_Click(object sender, EventArgs e)
         {
-
+            String rowID = dgvKhach_DanhSach.Rows[dgvKhach_DanhSach.CurrentRow.Index].Cells[0].Value.ToString();
+            if (MessageBox.Show("Bạn có chắc chắn xóa khách có mã  " + rowID + "", "Xóa khách hàng",
+                MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                controller.Khach_Xoa(rowID);
+                frmMain_Update();
+            }
         }
 
         private void btnKhach_Thoat_Click(object sender, EventArgs e)

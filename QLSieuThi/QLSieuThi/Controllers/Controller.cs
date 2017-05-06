@@ -80,8 +80,13 @@ namespace QLSieuThi.Controllers
 
         public void NhanVien_Xoa(string ma)
         {
-            dataAccess.NonQuery("delete NhanVien where ma='" + ma + "'");
+            SqlParameter[] para =
+            {
+                new SqlParameter("ma", ma)
+            };
+            dataAccess.NonQuery("proc_deleteNV", para);
         }
+
         public KhachHang[] getList_Khach()
         {
             DataTable table = dataAccess.Query("select *from KhachHang");
@@ -140,5 +145,14 @@ namespace QLSieuThi.Controllers
 
             return true;
         }
+        public void Khach_Xoa(string ma)
+        {
+            SqlParameter[] para =
+            {
+                new SqlParameter("ma", ma)
+            };
+            dataAccess.NonQuery("proc_deleteKhachHang", para);
+        }
+
     }
 }

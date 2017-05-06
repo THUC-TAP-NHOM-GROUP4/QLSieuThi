@@ -52,8 +52,8 @@ namespace QLSieuThi.View
             if (control.NhanVien_Sua(nhanvien))
             {
                 this.Close();
-                this.frmMain.Visible = true;
                 this.frmMain.frmMain_Update();
+                this.frmMain.Visible = true;  
             }
         }
 
