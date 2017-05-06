@@ -53,5 +53,10 @@ namespace QLSieuThi
         {
             tabControlMain.SelectTab(tabPageTrangChu);
         }
+
+        private void nbiTrangChu_NhapHang_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            tabControlMain.SelectTab(tabPageNhapHang);
+        }
     }
 }

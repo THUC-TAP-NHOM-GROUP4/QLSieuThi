@@ -106,6 +106,7 @@
             this.nbiTrangChu_NhapHang.Caption = "Nhập hàng";
             this.nbiTrangChu_NhapHang.ImageUri.Uri = "AddNewDataSource";
             this.nbiTrangChu_NhapHang.Name = "nbiTrangChu_NhapHang";
+            this.nbiTrangChu_NhapHang.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.nbiTrangChu_NhapHang_LinkClicked);
             // 
             // nbiTrangChu_BanHang
             // 
