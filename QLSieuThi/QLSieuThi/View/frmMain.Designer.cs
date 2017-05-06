@@ -46,9 +46,16 @@
             this.tabPageKhach = new System.Windows.Forms.TabPage();
             this.tabPageThongKe = new System.Windows.Forms.TabPage();
             this.tabPageHuongDan = new System.Windows.Forms.TabPage();
+            this.dgvNhanVien_DanhSach = new System.Windows.Forms.DataGridView();
+            this.btnNhanVien_Thoat = new System.Windows.Forms.Button();
+            this.btnNhanVien_Xoa = new System.Windows.Forms.Button();
+            this.btnNhanVien_Sua = new System.Windows.Forms.Button();
+            this.btnNhanVien_Them = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.navBarControl1)).BeginInit();
             this.tabControlMain.SuspendLayout();
+            this.tabPageQLNhanVien.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvNhanVien_DanhSach)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -187,6 +194,11 @@
             // 
             // tabPageQLNhanVien
             // 
+            this.tabPageQLNhanVien.Controls.Add(this.btnNhanVien_Thoat);
+            this.tabPageQLNhanVien.Controls.Add(this.btnNhanVien_Xoa);
+            this.tabPageQLNhanVien.Controls.Add(this.btnNhanVien_Sua);
+            this.tabPageQLNhanVien.Controls.Add(this.btnNhanVien_Them);
+            this.tabPageQLNhanVien.Controls.Add(this.dgvNhanVien_DanhSach);
             this.tabPageQLNhanVien.Location = new System.Drawing.Point(4, 22);
             this.tabPageQLNhanVien.Name = "tabPageQLNhanVien";
             this.tabPageQLNhanVien.Size = new System.Drawing.Size(1125, 632);
@@ -221,6 +233,57 @@
             this.tabPageHuongDan.Text = "Hướng dẫn";
             this.tabPageHuongDan.UseVisualStyleBackColor = true;
             // 
+            // dgvNhanVien_DanhSach
+            // 
+            this.dgvNhanVien_DanhSach.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.dgvNhanVien_DanhSach.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvNhanVien_DanhSach.Location = new System.Drawing.Point(3, 3);
+            this.dgvNhanVien_DanhSach.Name = "dgvNhanVien_DanhSach";
+            this.dgvNhanVien_DanhSach.ReadOnly = true;
+            this.dgvNhanVien_DanhSach.Size = new System.Drawing.Size(1119, 549);
+            this.dgvNhanVien_DanhSach.TabIndex = 0;
+            this.dgvNhanVien_DanhSach.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvNhanVien_DanhSach_CellDoubleClick);
+            // 
+            // btnNhanVien_Thoat
+            // 
+            this.btnNhanVien_Thoat.Location = new System.Drawing.Point(1018, 576);
+            this.btnNhanVien_Thoat.Name = "btnNhanVien_Thoat";
+            this.btnNhanVien_Thoat.Size = new System.Drawing.Size(96, 32);
+            this.btnNhanVien_Thoat.TabIndex = 1;
+            this.btnNhanVien_Thoat.Text = "Thoát";
+            this.btnNhanVien_Thoat.UseVisualStyleBackColor = true;
+            this.btnNhanVien_Thoat.Click += new System.EventHandler(this.btnNhanVien_Thoat_Click);
+            // 
+            // btnNhanVien_Xoa
+            // 
+            this.btnNhanVien_Xoa.Location = new System.Drawing.Point(888, 576);
+            this.btnNhanVien_Xoa.Name = "btnNhanVien_Xoa";
+            this.btnNhanVien_Xoa.Size = new System.Drawing.Size(96, 32);
+            this.btnNhanVien_Xoa.TabIndex = 1;
+            this.btnNhanVien_Xoa.Text = "Xóa";
+            this.btnNhanVien_Xoa.UseVisualStyleBackColor = true;
+            this.btnNhanVien_Xoa.Click += new System.EventHandler(this.btnNhanVien_Xoa_Click);
+            // 
+            // btnNhanVien_Sua
+            // 
+            this.btnNhanVien_Sua.Location = new System.Drawing.Point(758, 576);
+            this.btnNhanVien_Sua.Name = "btnNhanVien_Sua";
+            this.btnNhanVien_Sua.Size = new System.Drawing.Size(96, 32);
+            this.btnNhanVien_Sua.TabIndex = 1;
+            this.btnNhanVien_Sua.Text = "Sửa";
+            this.btnNhanVien_Sua.UseVisualStyleBackColor = true;
+            this.btnNhanVien_Sua.Click += new System.EventHandler(this.btnNhanVien_Sua_Click);
+            // 
+            // btnNhanVien_Them
+            // 
+            this.btnNhanVien_Them.Location = new System.Drawing.Point(628, 576);
+            this.btnNhanVien_Them.Name = "btnNhanVien_Them";
+            this.btnNhanVien_Them.Size = new System.Drawing.Size(96, 32);
+            this.btnNhanVien_Them.TabIndex = 1;
+            this.btnNhanVien_Them.Text = "Thêm";
+            this.btnNhanVien_Them.UseVisualStyleBackColor = true;
+            this.btnNhanVien_Them.Click += new System.EventHandler(this.btnNhanVien_Them_Click);
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -233,9 +296,12 @@
             this.Name = "frmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản lý siêu thị";
+            this.Load += new System.EventHandler(this.frmMain_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.navBarControl1)).EndInit();
             this.tabControlMain.ResumeLayout(false);
+            this.tabPageQLNhanVien.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvNhanVien_DanhSach)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -260,6 +326,11 @@
         private System.Windows.Forms.TabPage tabPageThongKe;
         private System.Windows.Forms.TabPage tabPageHuongDan;
         private DevExpress.XtraNavBar.NavBarItem nbiTrangChu_HuongDan;
+        private System.Windows.Forms.Button btnNhanVien_Thoat;
+        private System.Windows.Forms.Button btnNhanVien_Xoa;
+        private System.Windows.Forms.Button btnNhanVien_Sua;
+        private System.Windows.Forms.DataGridView dgvNhanVien_DanhSach;
+        private System.Windows.Forms.Button btnNhanVien_Them;
     }
 }
 
