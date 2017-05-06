@@ -46,6 +46,7 @@ namespace QLSieuThi.View
                 {
                     this.Close();
                     this.frmMain.Visible = true;
+                    this.frmMain.frmMain_Update();
                 }
             }
         }

@@ -76,6 +76,12 @@
     <Compile Include="View\frmNhanVien_Add.Designer.cs">
       <DependentUpon>frmNhanVien_Add.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\frmNhanVien_Update.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmNhanVien_Update.Designer.cs">
+      <DependentUpon>frmNhanVien_Update.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="View\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
@@ -94,6 +100,9 @@
     </Compile>
     <EmbeddedResource Include="View\frmNhanVien_Add.resx">
       <DependentUpon>frmNhanVien_Add.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmNhanVien_Update.resx">
+      <DependentUpon>frmNhanVien_Update.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

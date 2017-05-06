@@ -43,14 +43,14 @@
             this.tabPageNhapHang = new System.Windows.Forms.TabPage();
             this.tabPageBanHang = new System.Windows.Forms.TabPage();
             this.tabPageQLNhanVien = new System.Windows.Forms.TabPage();
-            this.tabPageKhach = new System.Windows.Forms.TabPage();
-            this.tabPageThongKe = new System.Windows.Forms.TabPage();
-            this.tabPageHuongDan = new System.Windows.Forms.TabPage();
-            this.dgvNhanVien_DanhSach = new System.Windows.Forms.DataGridView();
             this.btnNhanVien_Thoat = new System.Windows.Forms.Button();
             this.btnNhanVien_Xoa = new System.Windows.Forms.Button();
             this.btnNhanVien_Sua = new System.Windows.Forms.Button();
             this.btnNhanVien_Them = new System.Windows.Forms.Button();
+            this.dgvNhanVien_DanhSach = new System.Windows.Forms.DataGridView();
+            this.tabPageKhach = new System.Windows.Forms.TabPage();
+            this.tabPageThongKe = new System.Windows.Forms.TabPage();
+            this.tabPageHuongDan = new System.Windows.Forms.TabPage();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.navBarControl1)).BeginInit();
             this.tabControlMain.SuspendLayout();
@@ -206,44 +206,6 @@
             this.tabPageQLNhanVien.Text = "QL Nhân viên";
             this.tabPageQLNhanVien.UseVisualStyleBackColor = true;
             // 
-            // tabPageKhach
-            // 
-            this.tabPageKhach.Location = new System.Drawing.Point(4, 22);
-            this.tabPageKhach.Name = "tabPageKhach";
-            this.tabPageKhach.Size = new System.Drawing.Size(1125, 632);
-            this.tabPageKhach.TabIndex = 4;
-            this.tabPageKhach.Text = "QL Khách";
-            this.tabPageKhach.UseVisualStyleBackColor = true;
-            // 
-            // tabPageThongKe
-            // 
-            this.tabPageThongKe.Location = new System.Drawing.Point(4, 22);
-            this.tabPageThongKe.Name = "tabPageThongKe";
-            this.tabPageThongKe.Size = new System.Drawing.Size(1125, 632);
-            this.tabPageThongKe.TabIndex = 5;
-            this.tabPageThongKe.Text = "Thống kê";
-            this.tabPageThongKe.UseVisualStyleBackColor = true;
-            // 
-            // tabPageHuongDan
-            // 
-            this.tabPageHuongDan.Location = new System.Drawing.Point(4, 22);
-            this.tabPageHuongDan.Name = "tabPageHuongDan";
-            this.tabPageHuongDan.Size = new System.Drawing.Size(1125, 632);
-            this.tabPageHuongDan.TabIndex = 6;
-            this.tabPageHuongDan.Text = "Hướng dẫn";
-            this.tabPageHuongDan.UseVisualStyleBackColor = true;
-            // 
-            // dgvNhanVien_DanhSach
-            // 
-            this.dgvNhanVien_DanhSach.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.dgvNhanVien_DanhSach.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvNhanVien_DanhSach.Location = new System.Drawing.Point(3, 3);
-            this.dgvNhanVien_DanhSach.Name = "dgvNhanVien_DanhSach";
-            this.dgvNhanVien_DanhSach.ReadOnly = true;
-            this.dgvNhanVien_DanhSach.Size = new System.Drawing.Size(1119, 549);
-            this.dgvNhanVien_DanhSach.TabIndex = 0;
-            this.dgvNhanVien_DanhSach.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvNhanVien_DanhSach_CellDoubleClick);
-            // 
             // btnNhanVien_Thoat
             // 
             this.btnNhanVien_Thoat.Location = new System.Drawing.Point(1018, 576);
@@ -284,6 +246,44 @@
             this.btnNhanVien_Them.UseVisualStyleBackColor = true;
             this.btnNhanVien_Them.Click += new System.EventHandler(this.btnNhanVien_Them_Click);
             // 
+            // dgvNhanVien_DanhSach
+            // 
+            this.dgvNhanVien_DanhSach.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.dgvNhanVien_DanhSach.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvNhanVien_DanhSach.Location = new System.Drawing.Point(3, 3);
+            this.dgvNhanVien_DanhSach.Name = "dgvNhanVien_DanhSach";
+            this.dgvNhanVien_DanhSach.ReadOnly = true;
+            this.dgvNhanVien_DanhSach.Size = new System.Drawing.Size(1119, 549);
+            this.dgvNhanVien_DanhSach.TabIndex = 0;
+            this.dgvNhanVien_DanhSach.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvNhanVien_DanhSach_CellDoubleClick);
+            // 
+            // tabPageKhach
+            // 
+            this.tabPageKhach.Location = new System.Drawing.Point(4, 22);
+            this.tabPageKhach.Name = "tabPageKhach";
+            this.tabPageKhach.Size = new System.Drawing.Size(1125, 632);
+            this.tabPageKhach.TabIndex = 4;
+            this.tabPageKhach.Text = "QL Khách";
+            this.tabPageKhach.UseVisualStyleBackColor = true;
+            // 
+            // tabPageThongKe
+            // 
+            this.tabPageThongKe.Location = new System.Drawing.Point(4, 22);
+            this.tabPageThongKe.Name = "tabPageThongKe";
+            this.tabPageThongKe.Size = new System.Drawing.Size(1125, 632);
+            this.tabPageThongKe.TabIndex = 5;
+            this.tabPageThongKe.Text = "Thống kê";
+            this.tabPageThongKe.UseVisualStyleBackColor = true;
+            // 
+            // tabPageHuongDan
+            // 
+            this.tabPageHuongDan.Location = new System.Drawing.Point(4, 22);
+            this.tabPageHuongDan.Name = "tabPageHuongDan";
+            this.tabPageHuongDan.Size = new System.Drawing.Size(1125, 632);
+            this.tabPageHuongDan.TabIndex = 6;
+            this.tabPageHuongDan.Text = "Hướng dẫn";
+            this.tabPageHuongDan.UseVisualStyleBackColor = true;
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -296,6 +296,7 @@
             this.Name = "frmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản lý siêu thị";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmMain_FormClosed);
             this.Load += new System.EventHandler(this.frmMain_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.navBarControl1)).EndInit();

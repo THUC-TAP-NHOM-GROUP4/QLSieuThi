@@ -35,6 +35,7 @@ namespace QLSieuThi.Controllers
                 nv.Luong = Double.Parse(table.Rows[i]["luong"].ToString().Trim());
                 nv.PhongBan = table.Rows[i]["phongban"].ToString().Trim();
                 nv.DiaChi = table.Rows[i]["diachi"].ToString().Trim();
+                nv.MatKhau = table.Rows[i]["matkhau"].ToString().Trim();
                 list[i] = nv;
 
             }
@@ -42,13 +43,6 @@ namespace QLSieuThi.Controllers
         }
         public bool NhanVien_Them(NhanVien nv)
         {
-            /*ALTER proc [dbo].[proc_insertNV](@ten nvarchar(50),@gioitinh int, @ngaysinh date, @sodienthoai varchar(20),
-	@luong money,@phongban nvarchar(50), @diachi nvarchar(200), @matkhau varchar(20))
-as
-begin
-	insert into NhanVien(ma, ten, gioitinh, Ngaysinh, SDT, Luong, PhongBan, DiaChi, MatKhau)
-	values (dbo.auto_ma_nv(), @ten, @gioitinh,@ngaysinh,  @sodienthoai,@luong, @phongban, @diachi, @matkhau)
-end*/
             SqlParameter[] para =
             {
                 new SqlParameter("ten", nv.Ten),
@@ -64,5 +58,29 @@ end*/
 
             return true;
         }
+        public bool NhanVien_Sua(NhanVien nv)
+        {
+            SqlParameter[] para =
+                  {
+                new SqlParameter("ma", nv.Ma),
+                new SqlParameter("ten", nv.Ten),
+                new SqlParameter("gioitinh", nv.GioiTinh),
+                new SqlParameter("ngaysinh", nv.NgaySinh),
+                new SqlParameter("sodienthoai", nv.SoDienThoai),
+                new SqlParameter("luong", nv.Luong),
+                new SqlParameter("phongban", nv.PhongBan),
+                new SqlParameter("diachi", nv.DiaChi),
+                new SqlParameter("matkhau", nv.MatKhau)
+            };
+            dataAccess.Query("proc_updateNV", para);
+
+            return true;
+        }
+
+        public void NhanVien_Xoa(string ma)
+        {
+            dataAccess.NonQuery("delete NhanVien where ma='" + ma + "'");
+        }
+
     }
 }
