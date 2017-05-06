@@ -49,6 +49,11 @@
             this.btnNhanVien_Them = new System.Windows.Forms.Button();
             this.dgvNhanVien_DanhSach = new System.Windows.Forms.DataGridView();
             this.tabPageKhach = new System.Windows.Forms.TabPage();
+            this.btnKhach_Thoat = new System.Windows.Forms.Button();
+            this.btnKhach_Xoa = new System.Windows.Forms.Button();
+            this.btnKhach_Sua = new System.Windows.Forms.Button();
+            this.btnKhach_Them = new System.Windows.Forms.Button();
+            this.dgvKhach_DanhSach = new System.Windows.Forms.DataGridView();
             this.tabPageThongKe = new System.Windows.Forms.TabPage();
             this.tabPageHuongDan = new System.Windows.Forms.TabPage();
             this.panel1.SuspendLayout();
@@ -56,6 +61,8 @@
             this.tabControlMain.SuspendLayout();
             this.tabPageQLNhanVien.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNhanVien_DanhSach)).BeginInit();
+            this.tabPageKhach.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvKhach_DanhSach)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -208,63 +215,144 @@
             // 
             // btnNhanVien_Thoat
             // 
+            this.btnNhanVien_Thoat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnNhanVien_Thoat.FlatAppearance.BorderSize = 0;
+            this.btnNhanVien_Thoat.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnNhanVien_Thoat.Location = new System.Drawing.Point(1018, 576);
             this.btnNhanVien_Thoat.Name = "btnNhanVien_Thoat";
             this.btnNhanVien_Thoat.Size = new System.Drawing.Size(96, 32);
             this.btnNhanVien_Thoat.TabIndex = 1;
             this.btnNhanVien_Thoat.Text = "Thoát";
-            this.btnNhanVien_Thoat.UseVisualStyleBackColor = true;
+            this.btnNhanVien_Thoat.UseVisualStyleBackColor = false;
             this.btnNhanVien_Thoat.Click += new System.EventHandler(this.btnNhanVien_Thoat_Click);
             // 
             // btnNhanVien_Xoa
             // 
+            this.btnNhanVien_Xoa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnNhanVien_Xoa.FlatAppearance.BorderSize = 0;
+            this.btnNhanVien_Xoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnNhanVien_Xoa.Location = new System.Drawing.Point(888, 576);
             this.btnNhanVien_Xoa.Name = "btnNhanVien_Xoa";
             this.btnNhanVien_Xoa.Size = new System.Drawing.Size(96, 32);
             this.btnNhanVien_Xoa.TabIndex = 1;
             this.btnNhanVien_Xoa.Text = "Xóa";
-            this.btnNhanVien_Xoa.UseVisualStyleBackColor = true;
+            this.btnNhanVien_Xoa.UseVisualStyleBackColor = false;
             this.btnNhanVien_Xoa.Click += new System.EventHandler(this.btnNhanVien_Xoa_Click);
             // 
             // btnNhanVien_Sua
             // 
+            this.btnNhanVien_Sua.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnNhanVien_Sua.FlatAppearance.BorderSize = 0;
+            this.btnNhanVien_Sua.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnNhanVien_Sua.Location = new System.Drawing.Point(758, 576);
             this.btnNhanVien_Sua.Name = "btnNhanVien_Sua";
             this.btnNhanVien_Sua.Size = new System.Drawing.Size(96, 32);
             this.btnNhanVien_Sua.TabIndex = 1;
             this.btnNhanVien_Sua.Text = "Sửa";
-            this.btnNhanVien_Sua.UseVisualStyleBackColor = true;
+            this.btnNhanVien_Sua.UseVisualStyleBackColor = false;
             this.btnNhanVien_Sua.Click += new System.EventHandler(this.btnNhanVien_Sua_Click);
             // 
             // btnNhanVien_Them
             // 
+            this.btnNhanVien_Them.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnNhanVien_Them.FlatAppearance.BorderSize = 0;
+            this.btnNhanVien_Them.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnNhanVien_Them.Location = new System.Drawing.Point(628, 576);
             this.btnNhanVien_Them.Name = "btnNhanVien_Them";
             this.btnNhanVien_Them.Size = new System.Drawing.Size(96, 32);
             this.btnNhanVien_Them.TabIndex = 1;
             this.btnNhanVien_Them.Text = "Thêm";
-            this.btnNhanVien_Them.UseVisualStyleBackColor = true;
+            this.btnNhanVien_Them.UseVisualStyleBackColor = false;
             this.btnNhanVien_Them.Click += new System.EventHandler(this.btnNhanVien_Them_Click);
             // 
             // dgvNhanVien_DanhSach
             // 
-            this.dgvNhanVien_DanhSach.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.dgvNhanVien_DanhSach.BackgroundColor = System.Drawing.Color.Gainsboro;
             this.dgvNhanVien_DanhSach.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvNhanVien_DanhSach.Location = new System.Drawing.Point(3, 3);
+            this.dgvNhanVien_DanhSach.Location = new System.Drawing.Point(-5, 0);
             this.dgvNhanVien_DanhSach.Name = "dgvNhanVien_DanhSach";
             this.dgvNhanVien_DanhSach.ReadOnly = true;
-            this.dgvNhanVien_DanhSach.Size = new System.Drawing.Size(1119, 549);
+            this.dgvNhanVien_DanhSach.RowHeadersWidth = 42;
+            this.dgvNhanVien_DanhSach.Size = new System.Drawing.Size(1127, 552);
             this.dgvNhanVien_DanhSach.TabIndex = 0;
             this.dgvNhanVien_DanhSach.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvNhanVien_DanhSach_CellDoubleClick);
             // 
             // tabPageKhach
             // 
+            this.tabPageKhach.Controls.Add(this.btnKhach_Thoat);
+            this.tabPageKhach.Controls.Add(this.btnKhach_Xoa);
+            this.tabPageKhach.Controls.Add(this.btnKhach_Sua);
+            this.tabPageKhach.Controls.Add(this.btnKhach_Them);
+            this.tabPageKhach.Controls.Add(this.dgvKhach_DanhSach);
             this.tabPageKhach.Location = new System.Drawing.Point(4, 22);
             this.tabPageKhach.Name = "tabPageKhach";
             this.tabPageKhach.Size = new System.Drawing.Size(1125, 632);
             this.tabPageKhach.TabIndex = 4;
             this.tabPageKhach.Text = "QL Khách";
             this.tabPageKhach.UseVisualStyleBackColor = true;
+            // 
+            // btnKhach_Thoat
+            // 
+            this.btnKhach_Thoat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnKhach_Thoat.FlatAppearance.BorderSize = 0;
+            this.btnKhach_Thoat.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnKhach_Thoat.Location = new System.Drawing.Point(985, 579);
+            this.btnKhach_Thoat.Name = "btnKhach_Thoat";
+            this.btnKhach_Thoat.Size = new System.Drawing.Size(96, 32);
+            this.btnKhach_Thoat.TabIndex = 2;
+            this.btnKhach_Thoat.Text = "Thoát";
+            this.btnKhach_Thoat.UseVisualStyleBackColor = false;
+            this.btnKhach_Thoat.Click += new System.EventHandler(this.btnKhach_Thoat_Click);
+            // 
+            // btnKhach_Xoa
+            // 
+            this.btnKhach_Xoa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnKhach_Xoa.FlatAppearance.BorderSize = 0;
+            this.btnKhach_Xoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnKhach_Xoa.Location = new System.Drawing.Point(855, 579);
+            this.btnKhach_Xoa.Name = "btnKhach_Xoa";
+            this.btnKhach_Xoa.Size = new System.Drawing.Size(96, 32);
+            this.btnKhach_Xoa.TabIndex = 3;
+            this.btnKhach_Xoa.Text = "Xóa";
+            this.btnKhach_Xoa.UseVisualStyleBackColor = false;
+            this.btnKhach_Xoa.Click += new System.EventHandler(this.btnKhach_Xoa_Click);
+            // 
+            // btnKhach_Sua
+            // 
+            this.btnKhach_Sua.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnKhach_Sua.FlatAppearance.BorderSize = 0;
+            this.btnKhach_Sua.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnKhach_Sua.Location = new System.Drawing.Point(725, 579);
+            this.btnKhach_Sua.Name = "btnKhach_Sua";
+            this.btnKhach_Sua.Size = new System.Drawing.Size(96, 32);
+            this.btnKhach_Sua.TabIndex = 4;
+            this.btnKhach_Sua.Text = "Sửa";
+            this.btnKhach_Sua.UseVisualStyleBackColor = false;
+            this.btnKhach_Sua.Click += new System.EventHandler(this.btnKhach_Sua_Click);
+            // 
+            // btnKhach_Them
+            // 
+            this.btnKhach_Them.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnKhach_Them.FlatAppearance.BorderSize = 0;
+            this.btnKhach_Them.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnKhach_Them.Location = new System.Drawing.Point(595, 579);
+            this.btnKhach_Them.Name = "btnKhach_Them";
+            this.btnKhach_Them.Size = new System.Drawing.Size(96, 32);
+            this.btnKhach_Them.TabIndex = 5;
+            this.btnKhach_Them.Text = "Thêm";
+            this.btnKhach_Them.UseVisualStyleBackColor = false;
+            this.btnKhach_Them.Click += new System.EventHandler(this.btnKhach_Them_Click);
+            // 
+            // dgvKhach_DanhSach
+            // 
+            this.dgvKhach_DanhSach.BackgroundColor = System.Drawing.Color.Gainsboro;
+            this.dgvKhach_DanhSach.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvKhach_DanhSach.Location = new System.Drawing.Point(-4, 0);
+            this.dgvKhach_DanhSach.Name = "dgvKhach_DanhSach";
+            this.dgvKhach_DanhSach.ReadOnly = true;
+            this.dgvKhach_DanhSach.RowHeadersWidth = 42;
+            this.dgvKhach_DanhSach.Size = new System.Drawing.Size(1129, 549);
+            this.dgvKhach_DanhSach.TabIndex = 1;
             // 
             // tabPageThongKe
             // 
@@ -303,6 +391,8 @@
             this.tabControlMain.ResumeLayout(false);
             this.tabPageQLNhanVien.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvNhanVien_DanhSach)).EndInit();
+            this.tabPageKhach.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvKhach_DanhSach)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -332,6 +422,11 @@
         private System.Windows.Forms.Button btnNhanVien_Sua;
         private System.Windows.Forms.DataGridView dgvNhanVien_DanhSach;
         private System.Windows.Forms.Button btnNhanVien_Them;
+        private System.Windows.Forms.Button btnKhach_Thoat;
+        private System.Windows.Forms.Button btnKhach_Xoa;
+        private System.Windows.Forms.Button btnKhach_Sua;
+        private System.Windows.Forms.Button btnKhach_Them;
+        private System.Windows.Forms.DataGridView dgvKhach_DanhSach;
     }
 }
 

@@ -58,6 +58,7 @@ namespace QLSieuThi.Controllers
 
             return true;
         }
+       
         public bool NhanVien_Sua(NhanVien nv)
         {
             SqlParameter[] para =
@@ -81,6 +82,63 @@ namespace QLSieuThi.Controllers
         {
             dataAccess.NonQuery("delete NhanVien where ma='" + ma + "'");
         }
+        public KhachHang[] getList_Khach()
+        {
+            DataTable table = dataAccess.Query("select *from KhachHang");
+            int n = table.Rows.Count;
+            int i, gioitinh = 0;
+            if (n == 0) return null;
+            KhachHang[] list = new KhachHang[n];
 
+            for (i = 0; i < n; i++)
+            {
+                list[i] = new KhachHang();
+                list[i].Ma = table.Rows[i]["ma"].ToString().Trim();
+                list[i].Ten = table.Rows[i]["ten"].ToString().Trim();
+                if (int.TryParse(table.Rows[i]["gioitinh"].ToString().Trim(), out gioitinh))
+                {
+                    list[i].GioiTinh = gioitinh;
+                }
+                list[i].Email = table.Rows[i]["email"].ToString().Trim();
+                list[i].SoDienThoai = table.Rows[i]["SDT"].ToString().Trim();
+                list[i].SoCMND = table.Rows[i]["socmnd"].ToString().Trim();
+                list[i].DiaChi = table.Rows[i]["diachi"].ToString().Trim();
+            }
+            return list;
+        }
+
+        public bool KhachHang_Them(KhachHang kh)
+        {
+            SqlParameter[] para =
+            {
+                new SqlParameter("ten", kh.Ten),
+                new SqlParameter("gioitinh", kh.GioiTinh),
+                new SqlParameter("sodienthoai", kh.SoDienThoai),
+               new SqlParameter("email", kh.Email),
+                new SqlParameter("socmnd", kh.SoCMND),
+                new SqlParameter("diachi", kh.DiaChi)
+            };
+            
+            dataAccess.Query("proc_insertKhachHang", para);
+
+            return true;
+        }
+
+        public bool KhachHang_Sua(KhachHang kh)
+        {
+            SqlParameter[] para =
+                  {
+                new SqlParameter("ma", kh.Ma),
+                new SqlParameter("ten", kh.Ten),
+                new SqlParameter("gioitinh", kh.GioiTinh),
+                new SqlParameter("sodienthoai", kh.SoDienThoai),
+                new SqlParameter("diachi", kh.DiaChi),
+                new SqlParameter("email", kh.Email),
+                new SqlParameter("socmnd", kh.SoCMND)
+            };
+            dataAccess.Query("proc_updateKhachHang", para);
+
+            return true;
+        }
     }
 }
