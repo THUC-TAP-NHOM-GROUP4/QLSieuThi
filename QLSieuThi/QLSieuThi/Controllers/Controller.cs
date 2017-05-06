@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -38,6 +39,30 @@ namespace QLSieuThi.Controllers
 
             }
             return list;
+        }
+        public bool NhanVien_Them(NhanVien nv)
+        {
+            /*ALTER proc [dbo].[proc_insertNV](@ten nvarchar(50),@gioitinh int, @ngaysinh date, @sodienthoai varchar(20),
+	@luong money,@phongban nvarchar(50), @diachi nvarchar(200), @matkhau varchar(20))
+as
+begin
+	insert into NhanVien(ma, ten, gioitinh, Ngaysinh, SDT, Luong, PhongBan, DiaChi, MatKhau)
+	values (dbo.auto_ma_nv(), @ten, @gioitinh,@ngaysinh,  @sodienthoai,@luong, @phongban, @diachi, @matkhau)
+end*/
+            SqlParameter[] para =
+            {
+                new SqlParameter("ten", nv.Ten),
+                new SqlParameter("gioitinh", nv.GioiTinh),
+                new SqlParameter("ngaysinh", nv.NgaySinh),
+                new SqlParameter("sodienthoai", nv.SoDienThoai),
+                new SqlParameter("luong", nv.Luong),
+                new SqlParameter("phongban", nv.PhongBan),
+                new SqlParameter("diachi", nv.DiaChi),
+                new SqlParameter("matkhau", nv.MatKhau)
+            };
+            dataAccess.Query("proc_insertNV", para);
+
+            return true;
         }
     }
 }

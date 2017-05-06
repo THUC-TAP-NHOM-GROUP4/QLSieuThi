@@ -28,16 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnThoat = new System.Windows.Forms.Button();
+            this.btnThem = new System.Windows.Forms.Button();
             this.rbdnu = new System.Windows.Forms.RadioButton();
             this.rdbnam = new System.Windows.Forms.RadioButton();
             this.dtpngaysinh = new System.Windows.Forms.DateTimePicker();
-            this.txtemali = new System.Windows.Forms.TextBox();
+            this.txtMatKhau = new System.Windows.Forms.TextBox();
+            this.txtPhongBan = new System.Windows.Forms.TextBox();
             this.txtdienthoai = new System.Windows.Forms.TextBox();
-            this.txtsocmnd = new System.Windows.Forms.TextBox();
+            this.txtLuong = new System.Windows.Forms.TextBox();
             this.txtdiachi = new System.Windows.Forms.TextBox();
             this.txtten = new System.Windows.Forms.TextBox();
             this.txtma = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -46,11 +51,21 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.btnThoat = new System.Windows.Forms.Button();
-            this.btnThem = new System.Windows.Forms.Button();
+            this.erpHoTen = new System.Windows.Forms.ErrorProvider(this.components);
+            this.erpDiaChi = new System.Windows.Forms.ErrorProvider(this.components);
+            this.erpGioiTinh = new System.Windows.Forms.ErrorProvider(this.components);
+            this.erpLuong = new System.Windows.Forms.ErrorProvider(this.components);
+            this.erpDienThoai = new System.Windows.Forms.ErrorProvider(this.components);
+            this.erpPhongBan = new System.Windows.Forms.ErrorProvider(this.components);
+            this.erpMatKhau = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.erpHoTen)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erpDiaChi)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erpGioiTinh)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erpLuong)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erpDienThoai)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erpPhongBan)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erpMatKhau)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -60,10 +75,10 @@
             this.panel1.Controls.Add(this.rbdnu);
             this.panel1.Controls.Add(this.rdbnam);
             this.panel1.Controls.Add(this.dtpngaysinh);
-            this.panel1.Controls.Add(this.textBox1);
-            this.panel1.Controls.Add(this.txtemali);
+            this.panel1.Controls.Add(this.txtMatKhau);
+            this.panel1.Controls.Add(this.txtPhongBan);
             this.panel1.Controls.Add(this.txtdienthoai);
-            this.panel1.Controls.Add(this.txtsocmnd);
+            this.panel1.Controls.Add(this.txtLuong);
             this.panel1.Controls.Add(this.txtdiachi);
             this.panel1.Controls.Add(this.txtten);
             this.panel1.Controls.Add(this.txtma);
@@ -81,6 +96,32 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(429, 421);
             this.panel1.TabIndex = 0;
+            // 
+            // btnThoat
+            // 
+            this.btnThoat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnThoat.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnThoat.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnThoat.Location = new System.Drawing.Point(274, 356);
+            this.btnThoat.Name = "btnThoat";
+            this.btnThoat.Size = new System.Drawing.Size(96, 31);
+            this.btnThoat.TabIndex = 60;
+            this.btnThoat.Text = "THOÁT";
+            this.btnThoat.UseVisualStyleBackColor = false;
+            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
+            // 
+            // btnThem
+            // 
+            this.btnThem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnThem.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnThem.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnThem.Location = new System.Drawing.Point(145, 356);
+            this.btnThem.Name = "btnThem";
+            this.btnThem.Size = new System.Drawing.Size(96, 31);
+            this.btnThem.TabIndex = 59;
+            this.btnThem.Text = "THÊM";
+            this.btnThem.UseVisualStyleBackColor = false;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // rbdnu
             // 
@@ -111,12 +152,19 @@
             this.dtpngaysinh.Size = new System.Drawing.Size(225, 20);
             this.dtpngaysinh.TabIndex = 48;
             // 
-            // txtemali
+            // txtMatKhau
             // 
-            this.txtemali.Location = new System.Drawing.Point(145, 264);
-            this.txtemali.Name = "txtemali";
-            this.txtemali.Size = new System.Drawing.Size(225, 20);
-            this.txtemali.TabIndex = 57;
+            this.txtMatKhau.Location = new System.Drawing.Point(145, 301);
+            this.txtMatKhau.Name = "txtMatKhau";
+            this.txtMatKhau.Size = new System.Drawing.Size(225, 20);
+            this.txtMatKhau.TabIndex = 57;
+            // 
+            // txtPhongBan
+            // 
+            this.txtPhongBan.Location = new System.Drawing.Point(145, 264);
+            this.txtPhongBan.Name = "txtPhongBan";
+            this.txtPhongBan.Size = new System.Drawing.Size(225, 20);
+            this.txtPhongBan.TabIndex = 57;
             // 
             // txtdienthoai
             // 
@@ -125,12 +173,12 @@
             this.txtdienthoai.Size = new System.Drawing.Size(225, 20);
             this.txtdienthoai.TabIndex = 55;
             // 
-            // txtsocmnd
+            // txtLuong
             // 
-            this.txtsocmnd.Location = new System.Drawing.Point(145, 196);
-            this.txtsocmnd.Name = "txtsocmnd";
-            this.txtsocmnd.Size = new System.Drawing.Size(225, 20);
-            this.txtsocmnd.TabIndex = 53;
+            this.txtLuong.Location = new System.Drawing.Point(145, 196);
+            this.txtLuong.Name = "txtLuong";
+            this.txtLuong.Size = new System.Drawing.Size(225, 20);
+            this.txtLuong.TabIndex = 53;
             // 
             // txtdiachi
             // 
@@ -153,6 +201,15 @@
             this.txtma.Name = "txtma";
             this.txtma.Size = new System.Drawing.Size(225, 20);
             this.txtma.TabIndex = 42;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(42, 304);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(52, 13);
+            this.label4.TabIndex = 58;
+            this.label4.Text = "Mật khẩu";
             // 
             // label14
             // 
@@ -226,47 +283,33 @@
             this.label1.TabIndex = 44;
             this.label1.Text = "Mã nhân viên";
             // 
-            // label4
+            // erpHoTen
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(42, 304);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(52, 13);
-            this.label4.TabIndex = 58;
-            this.label4.Text = "Mật khẩu";
+            this.erpHoTen.ContainerControl = this;
             // 
-            // textBox1
+            // erpDiaChi
             // 
-            this.textBox1.Location = new System.Drawing.Point(145, 301);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(225, 20);
-            this.textBox1.TabIndex = 57;
+            this.erpDiaChi.ContainerControl = this;
             // 
-            // btnThoat
+            // erpGioiTinh
             // 
-            this.btnThoat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.btnThoat.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnThoat.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnThoat.Location = new System.Drawing.Point(274, 356);
-            this.btnThoat.Name = "btnThoat";
-            this.btnThoat.Size = new System.Drawing.Size(96, 31);
-            this.btnThoat.TabIndex = 60;
-            this.btnThoat.Text = "THOÁT";
-            this.btnThoat.UseVisualStyleBackColor = false;
-            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
+            this.erpGioiTinh.ContainerControl = this;
             // 
-            // btnThem
+            // erpLuong
             // 
-            this.btnThem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.btnThem.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnThem.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnThem.Location = new System.Drawing.Point(145, 356);
-            this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(96, 31);
-            this.btnThem.TabIndex = 59;
-            this.btnThem.Text = "THÊM";
-            this.btnThem.UseVisualStyleBackColor = false;
-            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
+            this.erpLuong.ContainerControl = this;
+            // 
+            // erpDienThoai
+            // 
+            this.erpDienThoai.ContainerControl = this;
+            // 
+            // erpPhongBan
+            // 
+            this.erpPhongBan.ContainerControl = this;
+            // 
+            // erpMatKhau
+            // 
+            this.erpMatKhau.ContainerControl = this;
             // 
             // frmNhanVien_Add
             // 
@@ -279,6 +322,13 @@
             this.Load += new System.EventHandler(this.frmNhanVien_Add_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.erpHoTen)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erpDiaChi)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erpGioiTinh)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erpLuong)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erpDienThoai)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erpPhongBan)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erpMatKhau)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -291,10 +341,10 @@
         private System.Windows.Forms.RadioButton rbdnu;
         private System.Windows.Forms.RadioButton rdbnam;
         private System.Windows.Forms.DateTimePicker dtpngaysinh;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox txtemali;
+        private System.Windows.Forms.TextBox txtMatKhau;
+        private System.Windows.Forms.TextBox txtPhongBan;
         private System.Windows.Forms.TextBox txtdienthoai;
-        private System.Windows.Forms.TextBox txtsocmnd;
+        private System.Windows.Forms.TextBox txtLuong;
         private System.Windows.Forms.TextBox txtdiachi;
         private System.Windows.Forms.TextBox txtten;
         private System.Windows.Forms.TextBox txtma;
@@ -307,5 +357,12 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ErrorProvider erpHoTen;
+        private System.Windows.Forms.ErrorProvider erpDiaChi;
+        private System.Windows.Forms.ErrorProvider erpGioiTinh;
+        private System.Windows.Forms.ErrorProvider erpLuong;
+        private System.Windows.Forms.ErrorProvider erpDienThoai;
+        private System.Windows.Forms.ErrorProvider erpPhongBan;
+        private System.Windows.Forms.ErrorProvider erpMatKhau;
     }
 }
