@@ -82,9 +82,9 @@ namespace QLSieuThi.Controllers
             return list;
         }
 
-        public ChiTietPhieuNhap[] getList_ChiTietPhieuNhap()
+        public ChiTietPhieuNhap[] getList_ChiTietPhieuNhap(string ma)
         {
-            DataTable table = dataAccess.Query("select *from ChiTietPhieuNhap order by ma desc");
+            DataTable table = dataAccess.Query("select *from ChiTietPhieuNhap where phieunhapma='"+ma+"'");
             int n = table.Rows.Count;
             int i;
             if (n == 0) return null;
@@ -106,9 +106,9 @@ namespace QLSieuThi.Controllers
             return list;
         }
 
-        public ChiTietPhieuXuat[] getList_ChiTietPhieuXuat()
+        public ChiTietPhieuXuat[] getList_ChiTietPhieuXuat(string ma)
         {
-            DataTable table = dataAccess.Query("select *from ChiTietPhieuXuat order by ma desc");
+            DataTable table = dataAccess.Query("select *from ChiTietPhieuXuat where phieuxuatma='"+ma+"'");
             int n = table.Rows.Count;
             int i;
             if (n == 0) return null;
@@ -402,7 +402,7 @@ namespace QLSieuThi.Controllers
             dataAccess.NonQuery("proc_deleteKhachHang", para);
         }
         
-
+     
       
 
     }

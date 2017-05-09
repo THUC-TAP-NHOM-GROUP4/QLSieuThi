@@ -100,6 +100,30 @@
     <Compile Include="View\frmNhanVien_Update.Designer.cs">
       <DependentUpon>frmNhanVien_Update.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\UDanhSachPN.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\UDanhSachPN.Designer.cs">
+      <DependentUpon>UDanhSachPN.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\uDanhSachPX.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\uDanhSachPX.Designer.cs">
+      <DependentUpon>uDanhSachPX.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\UNhapHang.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\UNhapHang.Designer.cs">
+      <DependentUpon>UNhapHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\UPhieuXuat.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\UPhieuXuat.Designer.cs">
+      <DependentUpon>UPhieuXuat.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="View\frmKhach_Add.resx">
       <DependentUpon>frmKhach_Add.cs</DependentUpon>
     </EmbeddedResource>
@@ -127,6 +151,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\frmNhanVien_Update.resx">
       <DependentUpon>frmNhanVien_Update.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\UDanhSachPN.resx">
+      <DependentUpon>UDanhSachPN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\uDanhSachPX.resx">
+      <DependentUpon>uDanhSachPX.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\UNhapHang.resx">
+      <DependentUpon>UNhapHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\UPhieuXuat.resx">
+      <DependentUpon>UPhieuXuat.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
