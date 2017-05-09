@@ -17,6 +17,7 @@ namespace QLSieuThi
     {
         private Controller controller = new Controller();
         frmLogin frmLogin;
+       
         public frmMain()
         {
             InitializeComponent();
@@ -32,7 +33,7 @@ namespace QLSieuThi
         {
             Load_tabpage_QLNhanVien();
             Load_tabpage_QLKhach();
-        }
+       }
 
         private void Load_tabpage_QLNhanVien()
         {
@@ -49,7 +50,7 @@ namespace QLSieuThi
             dgvNhanVien_DanhSach.Columns["DiaChi"].HeaderText = "Địa chỉ";
             dgvNhanVien_DanhSach.Columns["MatKhau"].HeaderText = "Mật khẩu";
 
-        }
+        }  
         private void Load_tabpage_QLKhach()
         {
             dgvKhach_DanhSach.DataSource = controller.getList_Khach();
@@ -73,6 +74,12 @@ namespace QLSieuThi
 
         private void nbiTrangChu_BanHang_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
+            TabPage tabPageBanHang = new TabPage();
+            tabPageBanHang.Text = "Bán hàng";
+            UPhieuXuat px = new UPhieuXuat();
+            px.Dock = DockStyle.Fill;
+            tabPageBanHang.Controls.Add(px);
+            tabControlMain.TabPages.Add(tabPageBanHang);
             tabControlMain.SelectTab(tabPageBanHang);
         }
 
@@ -103,7 +110,14 @@ namespace QLSieuThi
 
         private void nbiTrangChu_NhapHang_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
+            TabPage tabPageNhapHang = new TabPage();
+            tabPageNhapHang.Text = "Nhập hàng";
+            UNhapHang nh = new UNhapHang();
+            nh.Dock = DockStyle.Fill;
+            tabPageNhapHang.Controls.Add(nh);
+            tabControlMain.TabPages.Add(tabPageNhapHang); 
             tabControlMain.SelectTab(tabPageNhapHang);
+          
         }
 
         private void btnNhanVien_Them_Click(object sender, EventArgs e)
@@ -211,6 +225,28 @@ namespace QLSieuThi
         {
             tabControlMain.SelectTab(tabPageTrangChu);
         }
+       
+      
+        private void nbiDSPN_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            TabPage tabPageDSPN = new TabPage();
+            tabPageDSPN.Text = "Danh sách nhập hàng";
+            UDanhSachPN dsnh = new UDanhSachPN();
+            dsnh.Dock = DockStyle.Fill;
+            tabPageDSPN.Controls.Add(dsnh);
+            tabControlMain.TabPages.Add(tabPageDSPN);
+            tabControlMain.SelectTab(tabPageDSPN);
+        }
 
+        private void nbiDSPX_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            TabPage tabPageDSPX = new TabPage();
+            tabPageDSPX.Text = "Danh sách xuất hàng";
+            uDanhSachPX dsPX = new uDanhSachPX();
+            dsPX.Dock = DockStyle.Fill;
+            tabPageDSPX.Controls.Add(dsPX);
+            tabControlMain.TabPages.Add(tabPageDSPX);
+            tabControlMain.SelectTab(tabPageDSPX);
+        }
     }
 }

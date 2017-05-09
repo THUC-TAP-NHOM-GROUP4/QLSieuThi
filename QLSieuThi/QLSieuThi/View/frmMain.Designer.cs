@@ -28,20 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.panel1 = new System.Windows.Forms.Panel();
             this.navBarControl1 = new DevExpress.XtraNavBar.NavBarControl();
             this.nbgTrangChu = new DevExpress.XtraNavBar.NavBarGroup();
             this.nbiTrangChu = new DevExpress.XtraNavBar.NavBarItem();
             this.nbiTrangChu_NhapHang = new DevExpress.XtraNavBar.NavBarItem();
+            this.nbiDSPN = new DevExpress.XtraNavBar.NavBarItem();
             this.nbiTrangChu_BanHang = new DevExpress.XtraNavBar.NavBarItem();
+            this.nbiDSPX = new DevExpress.XtraNavBar.NavBarItem();
             this.nbiTrangChu_QLNhanVien = new DevExpress.XtraNavBar.NavBarItem();
             this.nbiTrangChu_QLKhach = new DevExpress.XtraNavBar.NavBarItem();
             this.nbiTrangChu_ThongKe = new DevExpress.XtraNavBar.NavBarItem();
             this.nbiTrangChu_HuongDan = new DevExpress.XtraNavBar.NavBarItem();
             this.tabControlMain = new System.Windows.Forms.TabControl();
             this.tabPageTrangChu = new System.Windows.Forms.TabPage();
-            this.tabPageNhapHang = new System.Windows.Forms.TabPage();
-            this.tabPageBanHang = new System.Windows.Forms.TabPage();
             this.tabPageQLNhanVien = new System.Windows.Forms.TabPage();
             this.btnNhanVien_Thoat = new System.Windows.Forms.Button();
             this.btnNhanVien_Xoa = new System.Windows.Forms.Button();
@@ -56,6 +58,13 @@
             this.dgvKhach_DanhSach = new System.Windows.Forms.DataGridView();
             this.tabPageThongKe = new System.Windows.Forms.TabPage();
             this.tabPageHuongDan = new System.Windows.Forms.TabPage();
+            this.errPNNguoiGiao = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errPNKhoMa = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errPNNoidung = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errPNSoLuong = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errTenHang = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errPXMaNV = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errpxKhachHang = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.navBarControl1)).BeginInit();
             this.tabControlMain.SuspendLayout();
@@ -63,6 +72,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvNhanVien_DanhSach)).BeginInit();
             this.tabPageKhach.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvKhach_DanhSach)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errPNNguoiGiao)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errPNKhoMa)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errPNNoidung)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errPNSoLuong)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errTenHang)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errPXMaNV)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errpxKhachHang)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -85,11 +101,13 @@
             this.nbiTrangChu_BanHang,
             this.nbiTrangChu_QLNhanVien,
             this.nbiTrangChu_QLKhach,
-            this.nbiTrangChu_ThongKe});
+            this.nbiTrangChu_ThongKe,
+            this.nbiDSPN,
+            this.nbiDSPX});
             this.navBarControl1.Location = new System.Drawing.Point(4, 10);
             this.navBarControl1.Name = "navBarControl1";
             this.navBarControl1.OptionsNavPane.ExpandedWidth = 140;
-            this.navBarControl1.Size = new System.Drawing.Size(140, 300);
+            this.navBarControl1.Size = new System.Drawing.Size(140, 508);
             this.navBarControl1.TabIndex = 0;
             this.navBarControl1.Text = "navBarControl1";
             // 
@@ -101,7 +119,9 @@
             this.nbgTrangChu.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
             new DevExpress.XtraNavBar.NavBarItemLink(this.nbiTrangChu),
             new DevExpress.XtraNavBar.NavBarItemLink(this.nbiTrangChu_NhapHang),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.nbiDSPN),
             new DevExpress.XtraNavBar.NavBarItemLink(this.nbiTrangChu_BanHang),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.nbiDSPX),
             new DevExpress.XtraNavBar.NavBarItemLink(this.nbiTrangChu_QLNhanVien),
             new DevExpress.XtraNavBar.NavBarItemLink(this.nbiTrangChu_QLKhach),
             new DevExpress.XtraNavBar.NavBarItemLink(this.nbiTrangChu_ThongKe),
@@ -122,6 +142,13 @@
             this.nbiTrangChu_NhapHang.Name = "nbiTrangChu_NhapHang";
             this.nbiTrangChu_NhapHang.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.nbiTrangChu_NhapHang_LinkClicked);
             // 
+            // nbiDSPN
+            // 
+            this.nbiDSPN.Caption = "Danh sách phiếu nhập";
+            this.nbiDSPN.Name = "nbiDSPN";
+            this.nbiDSPN.SmallImage = ((System.Drawing.Image)(resources.GetObject("nbiDSPN.SmallImage")));
+            this.nbiDSPN.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.nbiDSPN_LinkClicked);
+            // 
             // nbiTrangChu_BanHang
             // 
             this.nbiTrangChu_BanHang.Caption = "Bán hàng";
@@ -129,16 +156,25 @@
             this.nbiTrangChu_BanHang.Name = "nbiTrangChu_BanHang";
             this.nbiTrangChu_BanHang.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.nbiTrangChu_BanHang_LinkClicked);
             // 
+            // nbiDSPX
+            // 
+            this.nbiDSPX.Caption = "Danh sách phiếu xuất";
+            this.nbiDSPX.Name = "nbiDSPX";
+            this.nbiDSPX.SmallImage = ((System.Drawing.Image)(resources.GetObject("nbiDSPX.SmallImage")));
+            this.nbiDSPX.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.nbiDSPX_LinkClicked);
+            // 
             // nbiTrangChu_QLNhanVien
             // 
             this.nbiTrangChu_QLNhanVien.Caption = "QL Nhân viên";
             this.nbiTrangChu_QLNhanVien.Name = "nbiTrangChu_QLNhanVien";
+            this.nbiTrangChu_QLNhanVien.SmallImage = ((System.Drawing.Image)(resources.GetObject("nbiTrangChu_QLNhanVien.SmallImage")));
             this.nbiTrangChu_QLNhanVien.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.nbiTrangChu_QLNhanVien_LinkClicked);
             // 
             // nbiTrangChu_QLKhach
             // 
             this.nbiTrangChu_QLKhach.Caption = "QL Khách";
             this.nbiTrangChu_QLKhach.Name = "nbiTrangChu_QLKhach";
+            this.nbiTrangChu_QLKhach.SmallImage = ((System.Drawing.Image)(resources.GetObject("nbiTrangChu_QLKhach.SmallImage")));
             this.nbiTrangChu_QLKhach.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.nbiTrangChu_QLKhach_LinkClicked);
             // 
             // nbiTrangChu_ThongKe
@@ -158,8 +194,6 @@
             // tabControlMain
             // 
             this.tabControlMain.Controls.Add(this.tabPageTrangChu);
-            this.tabControlMain.Controls.Add(this.tabPageNhapHang);
-            this.tabControlMain.Controls.Add(this.tabPageBanHang);
             this.tabControlMain.Controls.Add(this.tabPageQLNhanVien);
             this.tabControlMain.Controls.Add(this.tabPageKhach);
             this.tabControlMain.Controls.Add(this.tabPageThongKe);
@@ -179,25 +213,6 @@
             this.tabPageTrangChu.TabIndex = 0;
             this.tabPageTrangChu.Text = "Trang Chủ";
             this.tabPageTrangChu.UseVisualStyleBackColor = true;
-            // 
-            // tabPageNhapHang
-            // 
-            this.tabPageNhapHang.Location = new System.Drawing.Point(4, 22);
-            this.tabPageNhapHang.Name = "tabPageNhapHang";
-            this.tabPageNhapHang.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageNhapHang.Size = new System.Drawing.Size(1125, 632);
-            this.tabPageNhapHang.TabIndex = 1;
-            this.tabPageNhapHang.Text = "Nhập hàng";
-            this.tabPageNhapHang.UseVisualStyleBackColor = true;
-            // 
-            // tabPageBanHang
-            // 
-            this.tabPageBanHang.Location = new System.Drawing.Point(4, 22);
-            this.tabPageBanHang.Name = "tabPageBanHang";
-            this.tabPageBanHang.Size = new System.Drawing.Size(1125, 632);
-            this.tabPageBanHang.TabIndex = 2;
-            this.tabPageBanHang.Text = "Bán hàng";
-            this.tabPageBanHang.UseVisualStyleBackColor = true;
             // 
             // tabPageQLNhanVien
             // 
@@ -372,6 +387,34 @@
             this.tabPageHuongDan.Text = "Hướng dẫn";
             this.tabPageHuongDan.UseVisualStyleBackColor = true;
             // 
+            // errPNNguoiGiao
+            // 
+            this.errPNNguoiGiao.ContainerControl = this;
+            // 
+            // errPNKhoMa
+            // 
+            this.errPNKhoMa.ContainerControl = this;
+            // 
+            // errPNNoidung
+            // 
+            this.errPNNoidung.ContainerControl = this;
+            // 
+            // errPNSoLuong
+            // 
+            this.errPNSoLuong.ContainerControl = this;
+            // 
+            // errTenHang
+            // 
+            this.errTenHang.ContainerControl = this;
+            // 
+            // errPXMaNV
+            // 
+            this.errPXMaNV.ContainerControl = this;
+            // 
+            // errpxKhachHang
+            // 
+            this.errpxKhachHang.ContainerControl = this;
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -393,6 +436,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvNhanVien_DanhSach)).EndInit();
             this.tabPageKhach.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvKhach_DanhSach)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errPNNguoiGiao)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errPNKhoMa)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errPNNoidung)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errPNSoLuong)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errTenHang)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errPXMaNV)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errpxKhachHang)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -410,8 +460,6 @@
         private DevExpress.XtraNavBar.NavBarItem nbiTrangChu_ThongKe;
         private System.Windows.Forms.TabControl tabControlMain;
         private System.Windows.Forms.TabPage tabPageTrangChu;
-        private System.Windows.Forms.TabPage tabPageNhapHang;
-        private System.Windows.Forms.TabPage tabPageBanHang;
         private System.Windows.Forms.TabPage tabPageQLNhanVien;
         private System.Windows.Forms.TabPage tabPageKhach;
         private System.Windows.Forms.TabPage tabPageThongKe;
@@ -427,6 +475,15 @@
         private System.Windows.Forms.Button btnKhach_Sua;
         private System.Windows.Forms.Button btnKhach_Them;
         private System.Windows.Forms.DataGridView dgvKhach_DanhSach;
+        private System.Windows.Forms.ErrorProvider errPNNguoiGiao;
+        private System.Windows.Forms.ErrorProvider errPNKhoMa;
+        private System.Windows.Forms.ErrorProvider errPNNoidung;
+        private System.Windows.Forms.ErrorProvider errPNSoLuong;
+        private System.Windows.Forms.ErrorProvider errTenHang;
+        private System.Windows.Forms.ErrorProvider errPXMaNV;
+        private System.Windows.Forms.ErrorProvider errpxKhachHang;
+        private DevExpress.XtraNavBar.NavBarItem nbiDSPN;
+        private DevExpress.XtraNavBar.NavBarItem nbiDSPX;
     }
 }
 
