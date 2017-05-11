@@ -6,11 +6,14 @@ using System.Threading.Tasks;
 
 namespace QLSieuThi.Models
 {
-    class Kho
+    class DonViQuyDoi
     {
-        public Kho() { }
+        public DonViQuyDoi() { }
         public string Ma { get; set; }
         public string Ten { get; set; }
-        public string DiaChi { get; set; }
+        public string DonViDoi { get; set; }
+        public string DonViCoSo { get; set; }
+        public int HeSoQuyDoi { get; set; }
+
     }
 }

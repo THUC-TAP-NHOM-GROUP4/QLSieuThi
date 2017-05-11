@@ -16,7 +16,8 @@ namespace QLSieuThi.Models
             NgaySinh = DateTime.Now;
             SoDienThoai = "";
             Luong = 0;
-            PhongBan = "";
+            PhongBanMa = "";
+            ChucVuMa = "";
             DiaChi = "";
             MatKhau = "";
         }
@@ -26,7 +27,8 @@ namespace QLSieuThi.Models
         public DateTime NgaySinh { get; set; }
         public String SoDienThoai { get; set; }
         public Double Luong { get; set; }
-        public String PhongBan { get; set; }
+        public String PhongBanMa { get; set; }
+        public String ChucVuMa { get; set; }
         public String DiaChi { get; set; }
         public String MatKhau { get; set; }
     }

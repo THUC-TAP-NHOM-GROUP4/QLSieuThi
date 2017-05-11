@@ -53,15 +53,20 @@
     <Compile Include="Controllers\Controller.cs" />
     <Compile Include="Models\ChiTietPhieuNhap.cs" />
     <Compile Include="Models\ChiTietPhieuXuat.cs" />
+    <Compile Include="Models\ChucVu.cs" />
     <Compile Include="Models\DataAccess.cs" />
+    <Compile Include="Models\DonViQuyDoi.cs" />
     <Compile Include="Models\HangHoa.cs" />
-    <Compile Include="Models\HoaDon.cs" />
     <Compile Include="Models\KhachHang.cs" />
     <Compile Include="Models\Kho.cs" />
+    <Compile Include="Models\KhuyenMai.cs" />
     <Compile Include="Models\NhaCungCap.cs" />
     <Compile Include="Models\NhanVien.cs" />
+    <Compile Include="Models\NhomHang.cs" />
     <Compile Include="Models\PhieuNhap.cs" />
     <Compile Include="Models\PhieuXuat.cs" />
+    <Compile Include="Models\PhongBan.cs" />
+    <Compile Include="Models\TheKhachHang.cs" />
     <Compile Include="View\frmKhach_Add.cs">
       <SubType>Form</SubType>
     </Compile>
