@@ -45,7 +45,7 @@ namespace QLSieuThi.View
             {
                 nhanvien.Luong = luong;
             }
-            nhanvien.PhongBan = txtPhongBan.Text.ToString().Trim();
+            nhanvien.PhongBanMa = txtPhongBan.Text.ToString().Trim();
             nhanvien.MatKhau = txtMatKhau.Text.ToString().Trim();
 
 
@@ -72,7 +72,7 @@ namespace QLSieuThi.View
             dtpngaysinh.Text = nhanvien.NgaySinh.ToShortDateString();
             txtdienthoai.Text = nhanvien.SoDienThoai;
             txtLuong.Text = nhanvien.Luong.ToString();
-            txtPhongBan.Text = nhanvien.PhongBan;
+            txtPhongBan.Text = nhanvien.PhongBanMa;
             txtMatKhau.Text = nhanvien.MatKhau;
             txtma.Text = nhanvien.Ma;
         }

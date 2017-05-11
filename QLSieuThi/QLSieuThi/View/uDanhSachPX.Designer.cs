@@ -37,9 +37,9 @@
             // dtgDSCTPX
             // 
             this.dtgDSCTPX.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgDSCTPX.Location = new System.Drawing.Point(558, 28);
+            this.dtgDSCTPX.Location = new System.Drawing.Point(532, 28);
             this.dtgDSCTPX.Name = "dtgDSCTPX";
-            this.dtgDSCTPX.Size = new System.Drawing.Size(566, 602);
+            this.dtgDSCTPX.Size = new System.Drawing.Size(592, 602);
             this.dtgDSCTPX.TabIndex = 6;
             // 
             // dtgDSPX
@@ -47,7 +47,7 @@
             this.dtgDSPX.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgDSPX.Location = new System.Drawing.Point(9, 28);
             this.dtgDSPX.Name = "dtgDSPX";
-            this.dtgDSPX.Size = new System.Drawing.Size(543, 602);
+            this.dtgDSPX.Size = new System.Drawing.Size(517, 602);
             this.dtgDSPX.TabIndex = 5;
             this.dtgDSPX.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dtgDSPX_RowHeaderMouseClick);
             // 

@@ -14,8 +14,8 @@ namespace QLSieuThi.Models
         public string NhaCungCapMa{ get; set; }
         public string NguoiGiaoMa { get; set; }
         public string NoiDung { get; set; }
-       // public string KhoMa { get; set; }
-      //  public string NhanVienMa { get; set; }
+        public double TongTien { get; set; }
+
 
     }
 }

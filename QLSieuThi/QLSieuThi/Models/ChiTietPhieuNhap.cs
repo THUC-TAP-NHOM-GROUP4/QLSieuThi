@@ -13,6 +13,8 @@ namespace QLSieuThi.Models
         public string HangHoaMa { get; set; }
         public string KhoMa { get; set; }
         public int SoLuong { get; set; }
+        public string DonVi { get; set; }
+        public string DonViQuyDoiMa { get; set; }
         public double DonGia { get; set; }
         public double ThanhTien { get; set; }
     }
