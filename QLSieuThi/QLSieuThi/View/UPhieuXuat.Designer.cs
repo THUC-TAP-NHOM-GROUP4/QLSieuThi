@@ -426,6 +426,7 @@
             this.cbbPXDonViQuyDoi.Name = "cbbPXDonViQuyDoi";
             this.cbbPXDonViQuyDoi.Size = new System.Drawing.Size(143, 21);
             this.cbbPXDonViQuyDoi.TabIndex = 93;
+            this.cbbPXDonViQuyDoi.SelectedIndexChanged += new System.EventHandler(this.cbbPXDonViQuyDoi_SelectedIndexChanged);
             // 
             // UPhieuXuat
             // 

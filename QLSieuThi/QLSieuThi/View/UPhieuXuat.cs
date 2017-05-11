@@ -168,7 +168,7 @@ namespace QLSieuThi.View
 
                     ctpx.HangHoaMa = row[0].ToString();
                     ctpx.SoLuong = int.Parse(row[1].ToString());
-                    ctpx.DonVi = row[2].ToString();
+                    ctpx.DonVi = row[2].ToString().Trim();
                     double dongia = 0;
                     double.TryParse(row[3].ToString(), out dongia);
                     ctpx.DonGia = dongia;
@@ -214,6 +214,11 @@ namespace QLSieuThi.View
         private void cbbPXKhachHang_SelectedIndexChanged(object sender, EventArgs e)
         {
             txtTheKhachHang.Text = controller.getTheKhachHang(cbbPXKhachHang.SelectedValue.ToString()).ToString();
+
+        }
+
+        private void cbbPXDonViQuyDoi_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
         }
     }
