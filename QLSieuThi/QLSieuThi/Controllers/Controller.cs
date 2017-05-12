@@ -451,7 +451,7 @@ namespace QLSieuThi.Controllers
         }
         public string getDonViQuyDoiMa(string ten)
         {
-            DataTable dt = dataAccess.Query("select ma from DonViQuyDoi where ten='" + ten + "'");
+            DataTable dt = dataAccess.Query("select ma from DonViQuyDoi where ten=N'" + ten + "'");
             string ma = "";
             if (dt.Rows.Count == 1)
                 return dt.Rows[0]["ma"].ToString().Trim();
