@@ -45,8 +45,8 @@ namespace QLSieuThi
             dgvNhanVien_DanhSach.Columns["NgaySinh"].HeaderText = "Ngày sinh";
             dgvNhanVien_DanhSach.Columns["SoDienThoai"].HeaderText = "Số điện thoại";
             dgvNhanVien_DanhSach.Columns["Luong"].HeaderText = "Lương";
-            dgvNhanVien_DanhSach.Columns["PhongBan"].HeaderText = "Phòng ban";
-            dgvNhanVien_DanhSach.Columns["PhongBan"].Width = 175;
+            dgvNhanVien_DanhSach.Columns["PhongBanMa"].HeaderText = "Phòng ban";
+            dgvNhanVien_DanhSach.Columns["PhongBanMa"].Width = 175;
             dgvNhanVien_DanhSach.Columns["DiaChi"].HeaderText = "Địa chỉ";
             dgvNhanVien_DanhSach.Columns["MatKhau"].HeaderText = "Mật khẩu";
 
@@ -149,7 +149,7 @@ namespace QLSieuThi
             {
                 nhanvien.Luong = temp;
             }
-            nhanvien.PhongBan = dgvNhanVien_DanhSach.Rows[dgvNhanVien_DanhSach.CurrentRow.Index].Cells[6].Value.ToString().Trim();
+            nhanvien.PhongBanMa = dgvNhanVien_DanhSach.Rows[dgvNhanVien_DanhSach.CurrentRow.Index].Cells[6].Value.ToString().Trim();
             nhanvien.DiaChi = dgvNhanVien_DanhSach.Rows[dgvNhanVien_DanhSach.CurrentRow.Index].Cells[7].Value.ToString().Trim();
             nhanvien.MatKhau = dgvNhanVien_DanhSach.Rows[dgvNhanVien_DanhSach.CurrentRow.Index].Cells[8].Value.ToString().Trim();
             frmNhanVien_Update frmNhanVien_Update = new frmNhanVien_Update(this, nhanvien);

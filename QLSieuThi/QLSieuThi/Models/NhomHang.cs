@@ -6,11 +6,10 @@ using System.Threading.Tasks;
 
 namespace QLSieuThi.Models
 {
-    class Kho
+    class NhomHang
     {
-        public Kho() { }
-        public string Ma { get; set; }
-        public string Ten { get; set; }
-        public string DiaChi { get; set; }
+        public NhomHang() { }
+        public String Ma { get; set; }
+        public String Ten { get; set; }
     }
 }

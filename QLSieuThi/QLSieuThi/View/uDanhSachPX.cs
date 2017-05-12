@@ -34,6 +34,7 @@ namespace QLSieuThi.View
             dtgDSPX.Columns["NoiDung"].HeaderText = "Nội Dung";
             dtgDSPX.Columns["KhachHangMa"].HeaderText = "Mã khách hàng";
             dtgDSPX.Columns["NhanVienMa"].HeaderText = "Mã nhân viên";
+            dtgDSPX.Columns["TongTien"].HeaderText = "Tổng tiền";
             dtgDSPX.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             PhieuXuat px = new PhieuXuat();
             px.Ma = dtgDSPX.Rows[dtgDSPX.CurrentRow.Index].Cells[0].Value.ToString();
@@ -45,6 +46,8 @@ namespace QLSieuThi.View
             dtgDSCTPX.Columns["KhoMa"].HeaderText = "Mã kho";
             dtgDSCTPX.Columns["HangHoaMa"].HeaderText = "Mã hàng hóa";
             dtgDSCTPX.Columns["SoLuong"].HeaderText = "Số Lượng";
+            dtgDSCTPX.Columns["DonVi"].HeaderText = "Đơn vị";
+            dtgDSCTPX.Columns["DonViQuyDoiMa"].HeaderText = "Đơn vị quy đổi mã";
             dtgDSCTPX.Columns["DonGia"].HeaderText = "Đơn giá";
             dtgDSCTPX.Columns["ThanhTien"].HeaderText = "Thành Tiền";
             dtgDSCTPX.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
@@ -62,6 +65,8 @@ namespace QLSieuThi.View
             dtgDSCTPX.Columns["KhoMa"].HeaderText = "Mã kho";
             dtgDSCTPX.Columns["HangHoaMa"].HeaderText = "Mã hàng hóa";
             dtgDSCTPX.Columns["SoLuong"].HeaderText = "Số Lượng";
+            dtgDSCTPX.Columns["DonVi"].HeaderText = "Đơn vị";
+            dtgDSCTPX.Columns["DonViQuyDoiMa"].HeaderText = "Đơn vị quy đổi mã";
             dtgDSCTPX.Columns["DonGia"].HeaderText = "Đơn giá";
             dtgDSCTPX.Columns["ThanhTien"].HeaderText = "Thành Tiền";
             dtgDSCTPX.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;

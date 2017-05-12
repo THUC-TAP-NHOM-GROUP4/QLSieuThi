@@ -39,7 +39,7 @@ namespace QLSieuThi.View
                     nv.Luong = luong;
                 }
                 
-                nv.PhongBan = txtPhongBan.Text.ToString().Trim();
+                nv.PhongBanMa = txtPhongBan.Text.ToString().Trim();
                 nv.MatKhau = txtMatKhau.Text.ToString().Trim();
                 nv.SoDienThoai = txtdienthoai.Text.ToString().Trim();
                 if (control.NhanVien_Them(nv))
