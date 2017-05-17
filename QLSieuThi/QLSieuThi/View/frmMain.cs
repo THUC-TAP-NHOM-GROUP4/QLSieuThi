@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -33,38 +34,59 @@ namespace QLSieuThi
         {
             Load_tabpage_QLNhanVien();
             Load_tabpage_QLKhach();
-       }
+            cbbkhoma.DataSource = da.Convert(da.Query("select ma from Kho"));
+            cbbthongke.Items.Add("Thống kê theo kho");
+            cbbthongke.Items.Add("Thống kê lượng hàng hóa nhập vào");
+            cbbthongke.Items.Add("Thống kê lượng hàng hóa bán ra");
+            cbbtimkiemhanghoa.Items.Add("Tìm kiếm theo tên hàng hóa");
+            cbbtimkiemhanghoa.Items.Add("Tìm kiếm theo ngày sản xuất");
+            cbbtimkiemhanghoa.Items.Add("Tìm kiếm theo hạn sử dụng");
+            cbbtimkiemhanghoa.Items.Add("Tìm kiếm theo nơi sản xuất");
+            cbbtimkiemhanghoa.Items.Add("Tìm kiếm theo tên số lượng");
+            cbbtimkiemhanghoa.Items.Add("Tìm kiếm theo đơn giá");
+            cbbtimkiemhanghoa.Items.Add("Tìm kiếm theo kho");
+            rtbhuongdan.Text = "\t\t\t"+"B1:Đăng nhập vào hệ thống" + "\n\t\t\t" +
+                             "B2:Vào trang chủ chọn các chức năng mong muốn" + "\n\t\t\t\t\t\t\t" +
+                                  " + Quản lý nhân viên: Có các nút thêm, sửa, xóa, thoát.Nhấn vào các button để thêm bớt các bản ghi như mong muốn.Nếu muốn thoát nhấn Thoát" + "\n\t\t\t\t\t\t\t" +
+                                  " + Quản lý nhân viên: Có các nút thêm, sửa, xóa, thoát.Nhấn vào các button để thêm bớt các bản ghi như mong muốn.Nếu muốn thoát nhấn Thoát" + "\n\t\t\t\t\t\t\t" +
+                                  " + Thống kê: Bạn có thể thống kê hàng hóa theo một số điều kiện nào đó. Cần phải điền đầy đủ thông tin vào các trường" + "\n\t\t\t\t\t\t\t" +
+                                  " + Tìm kiếm: Bạn có thể tìm kiếm hàng hóa theo một số điều kiện nào đó. Cần phải điền đủ thông tin các trường" + "\n\t\t\t"+
+                              "B3:Để thoát ra khỏi các chức năng bạn ấn vào tab trang chủ, trở về vị trí ban đầu"+"\n\n\t\t\t\t"+
+                              "Chú thích: các thanh bên các cũng có chức năng tương ứng với các tên trên các tab bên trên"+"\n\n\n\t\t\t\t\t\t\t\t"+
+                                                         "CHÚC BẠN THÀNH CÔNG";
+
+        }
 
         private void Load_tabpage_QLNhanVien()
         {
-            dgvNhanVien_DanhSach.DataSource = controller.getList_NhanVien();
-            dgvNhanVien_DanhSach.Columns["Ma"].HeaderText = "Mã";
-            dgvNhanVien_DanhSach.Columns["Ten"].HeaderText = "Tên";
-            dgvNhanVien_DanhSach.Columns["Ten"].Width = 200;
-            dgvNhanVien_DanhSach.Columns["GioiTinh"].HeaderText = "Giới tính";
-            dgvNhanVien_DanhSach.Columns["NgaySinh"].HeaderText = "Ngày sinh";
-            dgvNhanVien_DanhSach.Columns["SoDienThoai"].HeaderText = "Số điện thoại";
-            dgvNhanVien_DanhSach.Columns["Luong"].HeaderText = "Lương";
-            dgvNhanVien_DanhSach.Columns["PhongBan"].HeaderText = "Phòng ban";
-            dgvNhanVien_DanhSach.Columns["PhongBan"].Width = 175;
-            dgvNhanVien_DanhSach.Columns["DiaChi"].HeaderText = "Địa chỉ";
-            dgvNhanVien_DanhSach.Columns["MatKhau"].HeaderText = "Mật khẩu";
+            //dgvNhanVien_DanhSach.DataSource = controller.getList_NhanVien();
+            //dgvNhanVien_DanhSach.Columns["Ma"].HeaderText = "Mã";
+            //dgvNhanVien_DanhSach.Columns["Ten"].HeaderText = "Tên";
+            //dgvNhanVien_DanhSach.Columns["Ten"].Width = 200;
+            //dgvNhanVien_DanhSach.Columns["GioiTinh"].HeaderText = "Giới tính";
+            //dgvNhanVien_DanhSach.Columns["NgaySinh"].HeaderText = "Ngày sinh";
+            //dgvNhanVien_DanhSach.Columns["SoDienThoai"].HeaderText = "Số điện thoại";
+            //dgvNhanVien_DanhSach.Columns["Luong"].HeaderText = "Lương";
+            //dgvNhanVien_DanhSach.Columns["PhongBan"].HeaderText = "Phòng ban";
+            //dgvNhanVien_DanhSach.Columns["PhongBan"].Width = 175;
+            //dgvNhanVien_DanhSach.Columns["DiaChi"].HeaderText = "Địa chỉ";
+            //dgvNhanVien_DanhSach.Columns["MatKhau"].HeaderText = "Mật khẩu";
 
         }  
         private void Load_tabpage_QLKhach()
         {
-            dgvKhach_DanhSach.DataSource = controller.getList_Khach();
-            dgvKhach_DanhSach.Columns["Ma"].HeaderText = "Mã";
-            dgvKhach_DanhSach.Columns["Ten"].HeaderText = "Tên";
-            dgvKhach_DanhSach.Columns["Ten"].Width = 200;
-            dgvKhach_DanhSach.Columns["GioiTinh"].HeaderText = "Giới tính";
-            dgvKhach_DanhSach.Columns["SoCMND"].HeaderText = "CMND";
-            dgvKhach_DanhSach.Columns["SoCMND"].Width = 150;
-            dgvKhach_DanhSach.Columns["SoDienThoai"].HeaderText = "Số điện thoại";
-            dgvKhach_DanhSach.Columns["SoDienThoai"].Width = 150;
-            dgvKhach_DanhSach.Columns["email"].HeaderText = "Email";
-            dgvKhach_DanhSach.Columns["email"].Width = 285;
-            dgvKhach_DanhSach.Columns["DiaChi"].HeaderText = "Địa chỉ";
+            //dgvKhach_DanhSach.DataSource = controller.getList_Khach();
+            //dgvKhach_DanhSach.Columns["Ma"].HeaderText = "Mã";
+            //dgvKhach_DanhSach.Columns["Ten"].HeaderText = "Tên";
+            //dgvKhach_DanhSach.Columns["Ten"].Width = 200;
+            //dgvKhach_DanhSach.Columns["GioiTinh"].HeaderText = "Giới tính";
+            //dgvKhach_DanhSach.Columns["SoCMND"].HeaderText = "CMND";
+            //dgvKhach_DanhSach.Columns["SoCMND"].Width = 150;
+            //dgvKhach_DanhSach.Columns["SoDienThoai"].HeaderText = "Số điện thoại";
+            //dgvKhach_DanhSach.Columns["SoDienThoai"].Width = 150;
+            //dgvKhach_DanhSach.Columns["email"].HeaderText = "Email";
+            //dgvKhach_DanhSach.Columns["email"].Width = 285;
+            //dgvKhach_DanhSach.Columns["DiaChi"].HeaderText = "Địa chỉ";
         }
         public void frmMain_Update()
         {
@@ -247,6 +269,143 @@ namespace QLSieuThi
             tabPageDSPX.Controls.Add(dsPX);
             tabControlMain.TabPages.Add(tabPageDSPX);
             tabControlMain.SelectTab(tabPageDSPX);
+        }
+
+        private void tabPageThongKe_Click(object sender, EventArgs e)
+        {
+
+        }
+        DataAccess da = new DataAccess();
+        private void cbbthongke_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //if (cbbthongke.Text.Equals("Thống kê theo kho"))
+            //    if (cbbkhoma.Text != "     --- Chọn kho---")
+            //        dgrthongkehanghoa.DataSource = da.Query("[ProcHangHoaTrongKho]", new SqlParameter("@khoma", cbbkhoma.Text));
+            //    else
+            //        MessageBox.Show("Vui lòng chọn kho");
+            //else if (cbbthongke.Text.Equals("Thống kê lượng hàng hóa nhập vào"))
+            //    if (cbbkhoma.Text != "     --- Chọn kho---")
+            //        dgrthongkehanghoa.DataSource = da.Query("[ProcHangHoaNhapVao]", new SqlParameter("@hangnhap", cbbkhoma.Text));
+            //    else
+            //        MessageBox.Show("Vui lòng chọn kho");
+            //else if (cbbthongke.Text.Equals("Thống kê lượng hàng hóa bán ra"))
+            //    if (cbbkhoma.Text != "     --- Chọn kho---")
+            //        dgrthongkehanghoa.DataSource = da.Query("[ProcHangHoaBanRa]", new SqlParameter("@hangban", cbbkhoma.Text));
+            //    else
+            //        MessageBox.Show("Vui lòng chọn kho");
+            //else
+            //    MessageBox.Show("Vui lòng chọn cách thống kê");
+
+        }
+
+        private void cbbtimkiemhanghoa_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //if (cbbthongke.Text.Equals("Tìm kiếm theo tên hàng hóa"))
+            //    if (cbbkhoma.Text != "    Nhập từ khóa")
+            //        dgrthongkehanghoa.DataSource = da.Query("ProcTimKiemTheoTen", new SqlParameter("@ten", txttukhoa.Text));
+            //    else
+            //        MessageBox.Show("Vui lòng chọn kho");
+            //else if (cbbthongke.Text.Equals("Tìm kiếm theo tên số lượng"))
+            //    if (cbbkhoma.Text != "    Nhập từ khóa")
+            //        dgrthongkehanghoa.DataSource = da.Query("ProcTimKiemTheoSoLuong", new SqlParameter("@soluong", txttukhoa.Text));
+            //    else
+            //        MessageBox.Show("Vui lòng nhập từ khóa");
+            //else if (cbbthongke.Text.Equals("Tìm kiếm theo nơi sản xuất"))
+            //    if (cbbkhoma.Text != "    Nhập từ khóa")
+            //        dgrthongkehanghoa.DataSource = da.Query("ProcTimKiemTheoNoiSanXuat", new SqlParameter("@noisanxuat", txttukhoa.Text));
+            //    else
+            //        MessageBox.Show("Vui lòng nhập từ khóa");
+            //else if (cbbthongke.Text.Equals("Tìm kiếm theo ngày sản xuất"))
+            //    if (cbbkhoma.Text != "    Nhập từ khóa")
+            //        dgrthongkehanghoa.DataSource = da.Query("ProcTimKiemTheoNgaySanXuat", new SqlParameter("@ngaysanxuat", txttukhoa.Text));
+            //    else
+            //        MessageBox.Show("Vui lòng nhập từ khóa");
+            //else if (cbbthongke.Text.Equals("Tìm kiếm theo kho"))
+            //    if (cbbkhoma.Text != "    Nhập từ khóa")
+            //        dgrthongkehanghoa.DataSource = da.Query("ProcTimKiemTheoKhoMa", new SqlParameter("@khoma", txttukhoa.Text));
+            //    else
+            //        MessageBox.Show("Vui lòng nhập từ khóa");
+            //else if (cbbthongke.Text.Equals("Tìm kiếm theo hạn sử dụng"))
+            //    if (cbbkhoma.Text != "    Nhập từ khóa")
+            //        dgrthongkehanghoa.DataSource = da.Query("ProcTimKiemTheoHanSuDung", new SqlParameter("@khoma", txttukhoa.Text));
+            //    else
+            //        MessageBox.Show("Vui lòng nhập từ khóa");
+            //else if (cbbthongke.Text.Equals("Tìm kiếm theo đơn giá"))
+            //    if (cbbkhoma.Text != "    Nhập từ khóa")
+            //        dgrthongkehanghoa.DataSource = da.Query("ProcTimKiemTheoDongia", new SqlParameter("@dongia", txttukhoa.Text));
+            //    else
+            //        MessageBox.Show("Vui lòng nhập từ khóa");
+
+            //else
+            //    MessageBox.Show("Vui lòng chọn từ khóa tìm kiếm");
+        }
+
+        private void rtbhuongdan_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnthongke_Click(object sender, EventArgs e)
+        {
+            if (cbbthongke.Text.Equals("Thống kê theo kho"))
+                if (cbbkhoma.Text != "     --- Chọn kho---")
+                    dgrthongkehanghoa.DataSource = da.Query("[ProcHangHoaTrongKho]", new SqlParameter("@khoma", cbbkhoma.Text));
+                else
+                    MessageBox.Show("Vui lòng chọn kho");
+            else if (cbbthongke.Text.Equals("Thống kê lượng hàng hóa nhập vào"))
+                if (cbbkhoma.Text != "     --- Chọn kho---")
+                    dgrthongkehanghoa.DataSource = da.Query("[ProcHangHoaNhapVao]", new SqlParameter("@hangnhap", cbbkhoma.Text));
+                else
+                    MessageBox.Show("Vui lòng chọn kho");
+            else if (cbbthongke.Text.Equals("Thống kê lượng hàng hóa bán ra"))
+                if (cbbkhoma.Text != "     --- Chọn kho---")
+                    dgrthongkehanghoa.DataSource = da.Query("[ProcHangHoaBanRa]", new SqlParameter("@hangban", cbbkhoma.Text));
+                else
+                    MessageBox.Show("Vui lòng chọn kho");
+            else
+                MessageBox.Show("Vui lòng chọn cách thống kê");
+        }
+
+        private void btntimkiem_Click(object sender, EventArgs e)
+        {
+            if (cbbtimkiemhanghoa.Text.Equals("Tìm kiếm theo tên hàng hóa"))
+                if (txttukhoa.Text != "    Nhập từ khóa")
+                    dgrtimkiemhanghoa.DataSource = da.Query("ProcTimKiemTheoTen", new SqlParameter("@ten", txttukhoa.Text));
+                else
+                    MessageBox.Show("Vui lòng chọn kho");
+            else if (cbbtimkiemhanghoa.Text.Equals("Tìm kiếm theo tên số lượng"))
+                if (txttukhoa.Text != "    Nhập từ khóa")
+                    dgrtimkiemhanghoa.DataSource = da.Query("ProcTimKiemTheoSoLuong", new SqlParameter("@soluong", txttukhoa.Text));
+                else
+                    MessageBox.Show("Vui lòng nhập từ khóa");
+            else if (cbbtimkiemhanghoa.Text.Equals("Tìm kiếm theo nơi sản xuất"))
+                if (txttukhoa.Text != "    Nhập từ khóa")
+                    dgrtimkiemhanghoa.DataSource = da.Query("ProcTimKiemTheoNoiSanXuat", new SqlParameter("@noisanxuat", txttukhoa.Text));
+                else
+                    MessageBox.Show("Vui lòng nhập từ khóa");
+            else if (cbbtimkiemhanghoa.Text.Equals("Tìm kiếm theo ngày sản xuất"))
+                if (txttukhoa.Text != "    Nhập từ khóa")
+                    dgrtimkiemhanghoa.DataSource = da.Query("ProcTimKiemTheoNgaySanXuat", new SqlParameter("@ngaysanxuat", txttukhoa.Text));
+                else
+                    MessageBox.Show("Vui lòng nhập từ khóa");
+            else if (cbbtimkiemhanghoa.Text.Equals("Tìm kiếm theo kho"))
+                if (txttukhoa.Text != "    Nhập từ khóa")
+                    dgrtimkiemhanghoa.DataSource = da.Query("ProcTimKiemTheoKhoMa", new SqlParameter("@khoma", txttukhoa.Text));
+                else
+                    MessageBox.Show("Vui lòng nhập từ khóa");
+            else if (cbbtimkiemhanghoa.Text.Equals("Tìm kiếm theo hạn sử dụng"))
+                if (txttukhoa.Text != "    Nhập từ khóa")
+                    dgrtimkiemhanghoa.DataSource = da.Query("ProcTimKiemTheoHanSuDung", new SqlParameter("@khoma", txttukhoa.Text));
+                else
+                    MessageBox.Show("Vui lòng nhập từ khóa");
+            else if (cbbtimkiemhanghoa.Text.Equals("Tìm kiếm theo đơn giá"))
+                if (txttukhoa.Text != "    Nhập từ khóa")
+                    dgrtimkiemhanghoa.DataSource = da.Query("ProcTimKiemTheoDongia", new SqlParameter("@dongia", txttukhoa.Text));
+                else
+                    MessageBox.Show("Vui lòng nhập từ khóa");
+
+            else
+                MessageBox.Show("Vui lòng chọn từ khóa tìm kiếm");
         }
     }
 }

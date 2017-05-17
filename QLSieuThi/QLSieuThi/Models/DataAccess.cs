@@ -10,7 +10,7 @@ namespace QLSieuThi.Models
 {
     class DataAccess
     {
-            static string constr = @"Data Source=THANHHUONG\THANHHUONG;Initial Catalog=BanHangSieuThi;Integrated Security=True";
+            static string constr = @"Data Source=DESKTOP-DCH69I1\SQLEXPRESS;Initial Catalog=BanHangSieuThi;Integrated Security=True";
             private static SqlConnection con = new SqlConnection(constr);
             public DataTable Query(string sql, params SqlParameter[] pr)
             {
@@ -45,5 +45,15 @@ namespace QLSieuThi.Models
                 cmd.ExecuteNonQuery();
                 con.Close();
             }
+        public List<object> Convert(DataTable dt)
+        {
+            List<object> lst = new List<object>();
+            foreach(DataRow dr in dt.Rows)
+            {
+                foreach (DataColumn dc in dt.Columns)
+                    lst.Add(dr[dc]);
+            }
+            return lst;
+        }
         }
     }
