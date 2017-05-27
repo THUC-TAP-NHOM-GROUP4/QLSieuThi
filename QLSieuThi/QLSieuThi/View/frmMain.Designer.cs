@@ -57,7 +57,6 @@
             this.btnKhach_Them = new System.Windows.Forms.Button();
             this.dgvKhach_DanhSach = new System.Windows.Forms.DataGridView();
             this.tabPageThongKe = new System.Windows.Forms.TabPage();
-            this.tabPageHuongDan = new System.Windows.Forms.TabPage();
             this.errPNNguoiGiao = new System.Windows.Forms.ErrorProvider(this.components);
             this.errPNKhoMa = new System.Windows.Forms.ErrorProvider(this.components);
             this.errPNNoidung = new System.Windows.Forms.ErrorProvider(this.components);
@@ -65,13 +64,28 @@
             this.errTenHang = new System.Windows.Forms.ErrorProvider(this.components);
             this.errPXMaNV = new System.Windows.Forms.ErrorProvider(this.components);
             this.errpxKhachHang = new System.Windows.Forms.ErrorProvider(this.components);
+            this.rtbhuongdan = new System.Windows.Forms.RichTextBox();
+            this.dgrthongkehanghoa = new System.Windows.Forms.DataGridView();
+            this.btnthongke = new System.Windows.Forms.Button();
+            this.cbbkhoma = new System.Windows.Forms.ComboBox();
+            this.cbbthongke = new System.Windows.Forms.ComboBox();
+            this.tptimkiem = new System.Windows.Forms.TabPage();
+            this.btntimkiem = new System.Windows.Forms.Button();
+            this.cbbtimkiemhanghoa = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.dgrtimkiemhanghoa = new System.Windows.Forms.DataGridView();
+            this.txttukhoa = new System.Windows.Forms.TextBox();
+            this.tphuongdan = new System.Windows.Forms.TabPage();
+            this.rtbhuongdan1 = new System.Windows.Forms.RichTextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.navBarControl1)).BeginInit();
             this.tabControlMain.SuspendLayout();
+            this.tabPageTrangChu.SuspendLayout();
             this.tabPageQLNhanVien.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNhanVien_DanhSach)).BeginInit();
             this.tabPageKhach.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvKhach_DanhSach)).BeginInit();
+            this.tabPageThongKe.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errPNNguoiGiao)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errPNKhoMa)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errPNNoidung)).BeginInit();
@@ -79,6 +93,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.errTenHang)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errPXMaNV)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errpxKhachHang)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgrthongkehanghoa)).BeginInit();
+            this.tptimkiem.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgrtimkiemhanghoa)).BeginInit();
+            this.tphuongdan.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -197,7 +215,8 @@
             this.tabControlMain.Controls.Add(this.tabPageQLNhanVien);
             this.tabControlMain.Controls.Add(this.tabPageKhach);
             this.tabControlMain.Controls.Add(this.tabPageThongKe);
-            this.tabControlMain.Controls.Add(this.tabPageHuongDan);
+            this.tabControlMain.Controls.Add(this.tptimkiem);
+            this.tabControlMain.Controls.Add(this.tphuongdan);
             this.tabControlMain.Location = new System.Drawing.Point(153, 3);
             this.tabControlMain.Name = "tabControlMain";
             this.tabControlMain.SelectedIndex = 0;
@@ -206,6 +225,7 @@
             // 
             // tabPageTrangChu
             // 
+            this.tabPageTrangChu.Controls.Add(this.rtbhuongdan);
             this.tabPageTrangChu.Location = new System.Drawing.Point(4, 22);
             this.tabPageTrangChu.Name = "tabPageTrangChu";
             this.tabPageTrangChu.Padding = new System.Windows.Forms.Padding(3);
@@ -371,21 +391,16 @@
             // 
             // tabPageThongKe
             // 
+            this.tabPageThongKe.Controls.Add(this.cbbkhoma);
+            this.tabPageThongKe.Controls.Add(this.cbbthongke);
+            this.tabPageThongKe.Controls.Add(this.btnthongke);
+            this.tabPageThongKe.Controls.Add(this.dgrthongkehanghoa);
             this.tabPageThongKe.Location = new System.Drawing.Point(4, 22);
             this.tabPageThongKe.Name = "tabPageThongKe";
             this.tabPageThongKe.Size = new System.Drawing.Size(1125, 632);
             this.tabPageThongKe.TabIndex = 5;
             this.tabPageThongKe.Text = "Thống kê";
             this.tabPageThongKe.UseVisualStyleBackColor = true;
-            // 
-            // tabPageHuongDan
-            // 
-            this.tabPageHuongDan.Location = new System.Drawing.Point(4, 22);
-            this.tabPageHuongDan.Name = "tabPageHuongDan";
-            this.tabPageHuongDan.Size = new System.Drawing.Size(1125, 632);
-            this.tabPageHuongDan.TabIndex = 6;
-            this.tabPageHuongDan.Text = "Hướng dẫn";
-            this.tabPageHuongDan.UseVisualStyleBackColor = true;
             // 
             // errPNNguoiGiao
             // 
@@ -415,6 +430,132 @@
             // 
             this.errpxKhachHang.ContainerControl = this;
             // 
+            // rtbhuongdan
+            // 
+            this.rtbhuongdan.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.rtbhuongdan.Location = new System.Drawing.Point(3, 3);
+            this.rtbhuongdan.Name = "rtbhuongdan";
+            this.rtbhuongdan.Size = new System.Drawing.Size(1119, 626);
+            this.rtbhuongdan.TabIndex = 0;
+            this.rtbhuongdan.Text = "";
+            // 
+            // dgrthongkehanghoa
+            // 
+            this.dgrthongkehanghoa.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgrthongkehanghoa.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dgrthongkehanghoa.Location = new System.Drawing.Point(0, 179);
+            this.dgrthongkehanghoa.Name = "dgrthongkehanghoa";
+            this.dgrthongkehanghoa.Size = new System.Drawing.Size(1125, 453);
+            this.dgrthongkehanghoa.TabIndex = 0;
+            // 
+            // btnthongke
+            // 
+            this.btnthongke.Location = new System.Drawing.Point(34, 54);
+            this.btnthongke.Name = "btnthongke";
+            this.btnthongke.Size = new System.Drawing.Size(75, 23);
+            this.btnthongke.TabIndex = 6;
+            this.btnthongke.Text = "Thống kê";
+            this.btnthongke.UseVisualStyleBackColor = true;
+            this.btnthongke.Click += new System.EventHandler(this.btnthongke_Click);
+            // 
+            // cbbkhoma
+            // 
+            this.cbbkhoma.FormattingEnabled = true;
+            this.cbbkhoma.Location = new System.Drawing.Point(341, 55);
+            this.cbbkhoma.Name = "cbbkhoma";
+            this.cbbkhoma.Size = new System.Drawing.Size(141, 21);
+            this.cbbkhoma.TabIndex = 8;
+            this.cbbkhoma.Text = "     --- Chọn kho---";
+            // 
+            // cbbthongke
+            // 
+            this.cbbthongke.FormattingEnabled = true;
+            this.cbbthongke.Location = new System.Drawing.Point(136, 54);
+            this.cbbthongke.Name = "cbbthongke";
+            this.cbbthongke.Size = new System.Drawing.Size(187, 21);
+            this.cbbthongke.TabIndex = 7;
+            this.cbbthongke.Text = "            --- Thống kê---";
+            // 
+            // tptimkiem
+            // 
+            this.tptimkiem.Controls.Add(this.txttukhoa);
+            this.tptimkiem.Controls.Add(this.dgrtimkiemhanghoa);
+            this.tptimkiem.Controls.Add(this.label3);
+            this.tptimkiem.Controls.Add(this.btntimkiem);
+            this.tptimkiem.Controls.Add(this.cbbtimkiemhanghoa);
+            this.tptimkiem.Location = new System.Drawing.Point(4, 22);
+            this.tptimkiem.Name = "tptimkiem";
+            this.tptimkiem.Padding = new System.Windows.Forms.Padding(3);
+            this.tptimkiem.Size = new System.Drawing.Size(1125, 632);
+            this.tptimkiem.TabIndex = 7;
+            this.tptimkiem.Text = "Tìm kiếm";
+            this.tptimkiem.UseVisualStyleBackColor = true;
+            // 
+            // btntimkiem
+            // 
+            this.btntimkiem.Location = new System.Drawing.Point(55, 54);
+            this.btntimkiem.Name = "btntimkiem";
+            this.btntimkiem.Size = new System.Drawing.Size(75, 23);
+            this.btntimkiem.TabIndex = 7;
+            this.btntimkiem.Text = "Tìm kiếm";
+            this.btntimkiem.UseVisualStyleBackColor = true;
+            this.btntimkiem.Click += new System.EventHandler(this.btntimkiem_Click);
+            // 
+            // cbbtimkiemhanghoa
+            // 
+            this.cbbtimkiemhanghoa.FormattingEnabled = true;
+            this.cbbtimkiemhanghoa.Location = new System.Drawing.Point(167, 54);
+            this.cbbtimkiemhanghoa.Name = "cbbtimkiemhanghoa";
+            this.cbbtimkiemhanghoa.Size = new System.Drawing.Size(169, 21);
+            this.cbbtimkiemhanghoa.TabIndex = 6;
+            this.cbbtimkiemhanghoa.Text = "     --- Tìm kiếm theo---";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(306, 133);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(107, 13);
+            this.label3.TabIndex = 8;
+            this.label3.Text = "Danh sách hàng hóa";
+            // 
+            // dgrtimkiemhanghoa
+            // 
+            this.dgrtimkiemhanghoa.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgrtimkiemhanghoa.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dgrtimkiemhanghoa.Location = new System.Drawing.Point(3, 157);
+            this.dgrtimkiemhanghoa.Name = "dgrtimkiemhanghoa";
+            this.dgrtimkiemhanghoa.Size = new System.Drawing.Size(1119, 472);
+            this.dgrtimkiemhanghoa.TabIndex = 9;
+            // 
+            // txttukhoa
+            // 
+            this.txttukhoa.Location = new System.Drawing.Point(370, 54);
+            this.txttukhoa.Name = "txttukhoa";
+            this.txttukhoa.Size = new System.Drawing.Size(134, 20);
+            this.txttukhoa.TabIndex = 10;
+            this.txttukhoa.Text = "    Nhập từ khóa";
+            // 
+            // tphuongdan
+            // 
+            this.tphuongdan.Controls.Add(this.rtbhuongdan1);
+            this.tphuongdan.Location = new System.Drawing.Point(4, 22);
+            this.tphuongdan.Name = "tphuongdan";
+            this.tphuongdan.Padding = new System.Windows.Forms.Padding(3);
+            this.tphuongdan.Size = new System.Drawing.Size(1125, 632);
+            this.tphuongdan.TabIndex = 8;
+            this.tphuongdan.Text = "Hướng dẫn";
+            this.tphuongdan.UseVisualStyleBackColor = true;
+            // 
+            // rtbhuongdan1
+            // 
+            this.rtbhuongdan1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.rtbhuongdan1.Location = new System.Drawing.Point(3, 3);
+            this.rtbhuongdan1.Name = "rtbhuongdan1";
+            this.rtbhuongdan1.Size = new System.Drawing.Size(1119, 626);
+            this.rtbhuongdan1.TabIndex = 0;
+            this.rtbhuongdan1.Text = "";
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -432,10 +573,12 @@
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.navBarControl1)).EndInit();
             this.tabControlMain.ResumeLayout(false);
+            this.tabPageTrangChu.ResumeLayout(false);
             this.tabPageQLNhanVien.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvNhanVien_DanhSach)).EndInit();
             this.tabPageKhach.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvKhach_DanhSach)).EndInit();
+            this.tabPageThongKe.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.errPNNguoiGiao)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errPNKhoMa)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errPNNoidung)).EndInit();
@@ -443,6 +586,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.errTenHang)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errPXMaNV)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errpxKhachHang)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgrthongkehanghoa)).EndInit();
+            this.tptimkiem.ResumeLayout(false);
+            this.tptimkiem.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgrtimkiemhanghoa)).EndInit();
+            this.tphuongdan.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -463,7 +611,6 @@
         private System.Windows.Forms.TabPage tabPageQLNhanVien;
         private System.Windows.Forms.TabPage tabPageKhach;
         private System.Windows.Forms.TabPage tabPageThongKe;
-        private System.Windows.Forms.TabPage tabPageHuongDan;
         private DevExpress.XtraNavBar.NavBarItem nbiTrangChu_HuongDan;
         private System.Windows.Forms.Button btnNhanVien_Thoat;
         private System.Windows.Forms.Button btnNhanVien_Xoa;
@@ -484,6 +631,19 @@
         private System.Windows.Forms.ErrorProvider errpxKhachHang;
         private DevExpress.XtraNavBar.NavBarItem nbiDSPN;
         private DevExpress.XtraNavBar.NavBarItem nbiDSPX;
+        private System.Windows.Forms.RichTextBox rtbhuongdan;
+        private System.Windows.Forms.ComboBox cbbkhoma;
+        private System.Windows.Forms.ComboBox cbbthongke;
+        private System.Windows.Forms.Button btnthongke;
+        private System.Windows.Forms.DataGridView dgrthongkehanghoa;
+        private System.Windows.Forms.TabPage tptimkiem;
+        private System.Windows.Forms.DataGridView dgrtimkiemhanghoa;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button btntimkiem;
+        private System.Windows.Forms.ComboBox cbbtimkiemhanghoa;
+        private System.Windows.Forms.TextBox txttukhoa;
+        private System.Windows.Forms.TabPage tphuongdan;
+        private System.Windows.Forms.RichTextBox rtbhuongdan1;
     }
 }
 
