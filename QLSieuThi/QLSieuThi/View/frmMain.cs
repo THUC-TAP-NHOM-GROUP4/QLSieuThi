@@ -39,13 +39,13 @@ namespace QLSieuThi
             cbbthongke.Items.Add("Thống kê theo kho");
             cbbthongke.Items.Add("Thống kê lượng hàng hóa nhập vào");
             cbbthongke.Items.Add("Thống kê lượng hàng hóa bán ra");
-            cbbthongke.Items.Add("Tìm kiếm theo tên hàng hóa");
-            cbbthongke.Items.Add("Tìm kiếm theo ngày sản xuất");
-            cbbthongke.Items.Add("Tìm kiếm theo hạn sử dụng");
-            cbbthongke.Items.Add("Tìm kiếm theo nơi sản xuất");
-            cbbthongke.Items.Add("Tìm kiếm theo tên số lượng");
-            cbbthongke.Items.Add("Tìm kiếm theo đơn giá");
-            cbbthongke.Items.Add("Tìm kiếm theo kho");
+            cbbtimkiemhanghoa.Items.Add("Tìm kiếm theo tên hàng hóa");
+            cbbtimkiemhanghoa.Items.Add("Tìm kiếm theo ngày sản xuất");
+            cbbtimkiemhanghoa.Items.Add("Tìm kiếm theo hạn sử dụng");
+            cbbtimkiemhanghoa.Items.Add("Tìm kiếm theo nơi sản xuất");
+            cbbtimkiemhanghoa.Items.Add("Tìm kiếm theo tên số lượng");
+            cbbtimkiemhanghoa.Items.Add("Tìm kiếm theo đơn giá");
+            cbbtimkiemhanghoa.Items.Add("Tìm kiếm theo kho");
             rtbhuongdan1.Text = "\t\t\t" + "B1:Đăng nhập vào hệ thống" + "\n\t\t\t" +
                              "B2:Vào trang chủ chọn các chức năng mong muốn" + "\n\t\t\t\t\t\t\t" +
                                   " + Quản lý nhân viên: Có các nút thêm, sửa, xóa, thoát.Nhấn vào các button để thêm bớt các bản ghi như mong muốn.Nếu muốn thoát nhấn Thoát" + "\n\t\t\t\t\t\t\t" +
@@ -302,7 +302,7 @@ namespace QLSieuThi
                     MessageBox.Show("Vui lòng nhập từ khóa");
             else if (cbbtimkiemhanghoa.Text.Equals("Tìm kiếm theo hạn sử dụng"))
                 if (txttukhoa.Text != "    Nhập từ khóa")
-                    dgrtimkiemhanghoa.DataSource = da.Query("ProcTimKiemTheoHanSuDung", new SqlParameter("@khoma", txttukhoa.Text));
+                    dgrtimkiemhanghoa.DataSource = da.Query("ProcTimKiemTheoHanSuDung", new SqlParameter("@hansudung", txttukhoa.Text));
                 else
                     MessageBox.Show("Vui lòng nhập từ khóa");
             else if (cbbtimkiemhanghoa.Text.Equals("Tìm kiếm theo đơn giá"))
@@ -313,27 +313,49 @@ namespace QLSieuThi
 
             else
                 MessageBox.Show("Vui lòng chọn từ khóa tìm kiếm");
+
+            
         }
 
         private void btnthongke_Click(object sender, EventArgs e)
         {
             if (cbbthongke.Text.Equals("Thống kê theo kho"))
                 if (cbbkhoma.Text != "     --- Chọn kho---")
-                    dgrthongkehanghoa.DataSource = da.Query("[ProcHangHoaTrongKho]", new SqlParameter("@khoma", cbbkhoma.Text));
+                    dgrthongkehanghoa.DataSource = da.Query("[ThongKeHangHoaTrongKho]", new SqlParameter("@khoma", cbbkhoma.Text));
                 else
                     MessageBox.Show("Vui lòng chọn kho");
             else if (cbbthongke.Text.Equals("Thống kê lượng hàng hóa nhập vào"))
                 if (cbbkhoma.Text != "     --- Chọn kho---")
-                    dgrthongkehanghoa.DataSource = da.Query("[ProcHangHoaNhapVao]", new SqlParameter("@hangnhap", cbbkhoma.Text));
+                    dgrthongkehanghoa.DataSource = da.Query("[ThongKeHangHoaNhapVao]", new SqlParameter("@khoma", cbbkhoma.Text));
                 else
                     MessageBox.Show("Vui lòng chọn kho");
             else if (cbbthongke.Text.Equals("Thống kê lượng hàng hóa bán ra"))
                 if (cbbkhoma.Text != "     --- Chọn kho---")
-                    dgrthongkehanghoa.DataSource = da.Query("[ProcHangHoaBanRa]", new SqlParameter("@hangban", cbbkhoma.Text));
+                    dgrthongkehanghoa.DataSource = da.Query("ThongKeHangHoaBanRa", new SqlParameter("@khoma", cbbkhoma.Text));
                 else
                     MessageBox.Show("Vui lòng chọn kho");
             else
                 MessageBox.Show("Vui lòng chọn cách thống kê");
+        }
+
+        private void cbbkhoma_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void tabPageThongKe_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txttukhoa_TextChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void txttukhoa_MouseClick(object sender, MouseEventArgs e)
+        {
+            txttukhoa.Text = "";
         }
     }
 }
