@@ -54,7 +54,7 @@
     <Compile Include="Models\ChiTietPhieuNhap.cs" />
     <Compile Include="Models\ChiTietPhieuXuat.cs" />
     <Compile Include="Models\ChucVu.cs" />
-    <Compile Include="Models\DataAccess.cs" />
+    <Compile Include="Controllers\DataAccess.cs" />
     <Compile Include="Models\DonViQuyDoi.cs" />
     <Compile Include="Models\HangHoa.cs" />
     <Compile Include="Models\KhachHang.cs" />
