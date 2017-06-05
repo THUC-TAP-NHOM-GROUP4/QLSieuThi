@@ -51,11 +51,29 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\Controller.cs" />
+    <Compile Include="Models\ChiTietPhieuNhap.cs" />
+    <Compile Include="Models\ChiTietPhieuXuat.cs" />
     <Compile Include="Models\DataAccess.cs" />
     <Compile Include="Models\HangHoa.cs" />
     <Compile Include="Models\HoaDon.cs" />
     <Compile Include="Models\KhachHang.cs" />
+    <Compile Include="Models\Kho.cs" />
+    <Compile Include="Models\NhaCungCap.cs" />
     <Compile Include="Models\NhanVien.cs" />
+    <Compile Include="Models\PhieuNhap.cs" />
+    <Compile Include="Models\PhieuXuat.cs" />
+    <Compile Include="View\frmKhach_Add.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmKhach_Add.Designer.cs">
+      <DependentUpon>frmKhach_Add.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmKhach_Update.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmKhach_Update.Designer.cs">
+      <DependentUpon>frmKhach_Update.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -70,6 +88,48 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="View\frmNhanVien_Add.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmNhanVien_Add.Designer.cs">
+      <DependentUpon>frmNhanVien_Add.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmNhanVien_Update.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmNhanVien_Update.Designer.cs">
+      <DependentUpon>frmNhanVien_Update.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\UDanhSachPN.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\UDanhSachPN.Designer.cs">
+      <DependentUpon>UDanhSachPN.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\uDanhSachPX.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\uDanhSachPX.Designer.cs">
+      <DependentUpon>uDanhSachPX.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\UNhapHang.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\UNhapHang.Designer.cs">
+      <DependentUpon>UNhapHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\UPhieuXuat.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\UPhieuXuat.Designer.cs">
+      <DependentUpon>UPhieuXuat.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="View\frmKhach_Add.resx">
+      <DependentUpon>frmKhach_Add.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmKhach_Update.resx">
+      <DependentUpon>frmKhach_Update.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
@@ -86,6 +146,24 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="View\frmNhanVien_Add.resx">
+      <DependentUpon>frmNhanVien_Add.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmNhanVien_Update.resx">
+      <DependentUpon>frmNhanVien_Update.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\UDanhSachPN.resx">
+      <DependentUpon>UDanhSachPN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\uDanhSachPX.resx">
+      <DependentUpon>uDanhSachPX.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\UNhapHang.resx">
+      <DependentUpon>UNhapHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\UPhieuXuat.resx">
+      <DependentUpon>UPhieuXuat.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -99,7 +177,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="images\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
