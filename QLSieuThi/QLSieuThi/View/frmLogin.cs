@@ -21,21 +21,25 @@ namespace QLSieuThi
         {
             String tenDangNhap = txtTenDangNhap.Text.ToString().Trim();
             String matKhau = txtMatKhau.Text.ToString().Trim();
-            if (isCheck(tenDangNhap, matKhau)) {
-                frmMain frmMain= new frmMain(this);
+            if (isCheck(tenDangNhap, matKhau))
+            {
+                frmMain frmMain = new frmMain(this);
                 this.Visible = false;
                 frmMain.Visible = true;
             }
         }
         private bool isCheck(String tenDangNhap, String matKhau)
         {
-
-
             return true;
         }
         private void btnThoat_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void frmLogin_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
